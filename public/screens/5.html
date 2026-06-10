@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<base target="_top">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#edeeef",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "tertiary-container": "#1b2334",
+                    "surface-dim": "#d9dadb",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "on-surface": "#191c1d",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#4b5f7f",
+                    "on-secondary-fixed-variant": "#004491",
+                    "on-secondary-container": "#003370",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#dbe2fa",
+                    "outline-variant": "#c4c6ce",
+                    "on-tertiary-fixed": "#141b2c",
+                    "on-primary-container": "#778bad",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#334766",
+                    "secondary": "#115cb9",
+                    "primary-fixed": "#d5e3ff",
+                    "tertiary": "#060d1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-low": "#f3f4f5",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed": "#d7e2ff",
+                    "on-secondary-fixed": "#001a40",
+                    "inverse-primary": "#b3c7ec",
+                    "surface-container-high": "#e7e8e9",
+                    "on-surface-variant": "#44474d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#838a9f",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-container": "#0c2340",
+                    "primary": "#000d21",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#acc7ff",
+                    "on-primary-fixed": "#031c38",
+                    "on-tertiary-fixed-variant": "#3f4759",
+                    "secondary-container": "#659dfe",
+                    "tertiary-fixed-dim": "#bfc6dd",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191c1d",
+                    "outline": "#74777e",
+                    "primary-fixed-dim": "#b3c7ec",
+                    "surface-variant": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .premium-shadow {
+            box-shadow: 0 4px 20px -2px rgba(12, 35, 64, 0.08);
+        }
+        .text-balance { text-wrap: balance; }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Navigation Shell (Suppressed based on Task Context: Focused Mobile About Page, but rendered as Header for branding) -->
+<header class="w-full sticky top-0 z-50 glass-header border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile h-16 md:h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl md:text-3xl">build_circle</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Excel Autocare</span>
+</div>
+<button aria-label="Menu" class="p-2 text-primary active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-10 pb-20">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-8">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Legacy of Precision</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary leading-tight">Mastery in Every Movement.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Authorized Maruti Suzuki Service Partner dedicated to Japanese engineering standards and technical excellence since 1998.</p>
+</div>
+<div class="mt-8 rounded-xl overflow-hidden premium-shadow aspect-[4/3] relative">
+<img alt="Excel Autocare Workshop" class="w-full h-full object-cover" data-alt="A wide-angle, high-fidelity photograph of a pristine, modern automotive service center with high-tech diagnostic equipment and professional technicians in navy uniforms. The space is filled with soft, natural light coming through large windows, creating a clean, professional atmosphere. A premium blue SUV is positioned on a hydraulic lift in the center, symbolizing technical mastery and precision. The overall aesthetic is minimalist and expensive, with a palette of deep blues and clinical whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcT_uZUi5t5unSVc-adBbewSSu0BVANtEy1d2XiJrsJ5tgFIQcEkdr1qmDxiC7NQYbPN_xXCf_Ldbn9YZTsFYPB2BasLV8-JXcYMAIvsDKkrC4cg9ekzEa5pk753v4eNhV9ysZFnaovrr_uvCe5J6vlbwLpOSUb-8_zJz80io_Hwxf7ao22APvxLGHboCEd8afLmr7x-YHTljDzaCraDf5UfLbWLdplzrP7PdMl4ldaB__2lMdsFVYzeLPcjjTxLTGpwSgSOFwDVqn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</section>
+<!-- Trust Indicators Bento -->
+<section class="px-margin-mobile">
+<div class="grid grid-cols-1 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-shadow border border-outline-variant/30 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">25+ Years</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Unrivaled expertise in Maruti Suzuki vehicle maintenance and complex technical repairs.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-shadow border border-outline-variant/30 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">OEM Precision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Using only genuine Maruti Suzuki parts and computerized diagnostic tools for factory-level accuracy.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl premium-shadow border border-outline-variant/30 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Certified Team</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our technicians undergo 200+ hours of annual training at Suzuki's regional technical centers.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise Detail -->
+<section class="bg-primary text-on-primary py-16 px-margin-mobile">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<h2 class="font-display-lg-mobile text-display-lg-mobile leading-tight">Engineered for Transparency.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container">We believe the future of car service is digital and friction-less. Track your service status in real-time through our integrated platform.</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim mt-1">check_circle</span>
+<div>
+<span class="font-headline-md text-headline-md block mb-1">Full Visibility</span>
+<span class="font-body-md text-body-md opacity-80">Photo &amp; video updates shared via WhatsApp throughout the service process.</span>
+</div>
+</div>
+<div class="w-full h-px bg-on-primary/10"></div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim mt-1">check_circle</span>
+<div>
+<span class="font-headline-md text-headline-md block mb-1">Fixed Pricing</span>
+<span class="font-body-md text-body-md opacity-80">No hidden costs. Every estimate is generated using official OEM labor and parts data.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="px-margin-mobile">
+<div class="bg-surface-container-low rounded-2xl p-8 text-center flex flex-col items-center gap-6 border border-outline-variant/50">
+<h3 class="font-headline-md text-headline-md text-primary">Ready to experience the Excel difference?</h3>
+<div class="flex flex-col w-full gap-3">
+<a class="bg-primary text-on-primary font-label-sm text-label-sm py-4 rounded-lg shadow-lg hover:bg-secondary transition-all duration-200 active:scale-95 uppercase tracking-widest" href="#">Book Service Now</a>
+<a class="bg-white text-primary border border-outline font-label-sm text-label-sm py-4 rounded-lg hover:bg-surface-container transition-all duration-200 active:scale-95 uppercase tracking-widest" href="#">WhatsApp Support</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Segment -->
+<footer class="bg-primary py-12 px-margin-mobile">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-primary font-bold">Excel Autocare</span>
+<p class="font-label-sm text-label-sm text-on-tertiary-container">Authorized Maruti Suzuki Service Partner.</p>
+</div>
+<nav class="grid grid-cols-2 gap-y-4">
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-white transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-white transition-all" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-white transition-all" href="#">Service Warranty</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-white transition-all" href="#">Genuine Parts</a>
+</nav>
+<div class="pt-8 border-t border-on-primary/10">
+<p class="font-label-sm text-label-sm text-on-tertiary-container opacity-60">© 2024 Excel Autocare. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Shell (Mobile Specific) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant px-margin-mobile h-16 flex justify-around items-center z-50 md:hidden">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">build</span>
+<span class="text-[10px] font-semibold">Services</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="text-[10px] font-bold">About</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="text-[10px] font-semibold">Contact</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for engineered feel
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Sticky header transition logic
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('premium-shadow');
+            } else {
+                header.classList.remove('premium-shadow');
+            }
+        });
+    </script>
+
+<script>
+(function(){
+  // Make all links escape the iframe and navigate parent
+  document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#'||href.startsWith('javascript:')) return;
+    a.setAttribute('target','_top');
+  });
+  // Wire bottom mobile nav: assume order Home/Services/MyCars(About)/Profile(Contact)
+  const routes=['/','/services','/about','/contact'];
+  document.querySelectorAll('nav.fixed.bottom-0 a, nav.md\\:hidden.fixed a').forEach((a,i)=>{
+    if(routes[i]){ a.setAttribute('href',routes[i]); a.setAttribute('target','_top'); }
+  });
+  // Hamburger menu
+  const burger=document.querySelector('header button.md\\:hidden, nav button.md\\:hidden');
+  if(burger){
+    const menu=document.createElement('div');
+    menu.className='md:hidden fixed inset-x-0 top-16 z-40 bg-white border-b border-outline-variant shadow-lg transform -translate-y-full transition-transform duration-200';
+    menu.style.transitionProperty='transform,opacity';
+    menu.innerHTML=`
+      <div class="flex flex-col p-4 gap-1">
+        <a href="/" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Home</a>
+        <a href="/services" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Services</a>
+        <a href="/about" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">About Us</a>
+        <a href="/contact" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Contact</a>
+        <a href="#" target="_top" class="mt-2 px-4 py-3 rounded-lg bg-primary text-white text-center font-label-sm">Book Service</a>
+      </div>`;
+    document.body.appendChild(menu);
+    let open=false;
+    burger.addEventListener('click',()=>{
+      open=!open;
+      menu.style.transform=open?'translateY(0)':'translateY(-110%)';
+      const icon=burger.querySelector('.material-symbols-outlined');
+      if(icon) icon.textContent=open?'close':'menu';
+    });
+  }
+})();
+</script>
+
+</body></html>

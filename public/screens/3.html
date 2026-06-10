@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<base target="_top">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Excel Autocare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(229, 231, 235, 0.5); }
+    .service-card-hover:hover { transform: translateY(-4px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#edeeef",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e1e3e4",
+            "tertiary-container": "#1b2334",
+            "surface-dim": "#d9dadb",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2e3132",
+            "on-surface": "#191c1d",
+            "on-primary": "#ffffff",
+            "background": "#f8f9fa",
+            "surface-tint": "#4b5f7f",
+            "on-secondary-fixed-variant": "#004491",
+            "on-secondary-container": "#003370",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#dbe2fa",
+            "outline-variant": "#c4c6ce",
+            "on-tertiary-fixed": "#141b2c",
+            "on-primary-container": "#778bad",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#334766",
+            "secondary": "#115cb9",
+            "primary-fixed": "#d5e3ff",
+            "tertiary": "#060d1d",
+            "surface-bright": "#f8f9fa",
+            "surface-container-low": "#f3f4f5",
+            "surface": "#f8f9fa",
+            "secondary-fixed": "#d7e2ff",
+            "on-secondary-fixed": "#001a40",
+            "inverse-primary": "#b3c7ec",
+            "surface-container-high": "#e7e8e9",
+            "on-surface-variant": "#44474d",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#838a9f",
+            "inverse-on-surface": "#f0f1f2",
+            "primary-container": "#0c2340",
+            "primary": "#000d21",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#acc7ff",
+            "on-primary-fixed": "#031c38",
+            "on-tertiary-fixed-variant": "#3f4759",
+            "secondary-container": "#659dfe",
+            "tertiary-fixed-dim": "#bfc6dd",
+            "on-error-container": "#93000a",
+            "on-background": "#191c1d",
+            "outline": "#74777e",
+            "primary-fixed-dim": "#b3c7ec",
+            "surface-variant": "#e1e3e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "section-gap": "120px",
+            "unit": "8px",
+            "container-max": "1280px",
+            "margin-desktop": "40px",
+            "gutter": "24px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "display-lg": ["Inter"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Header / Navigation Shell -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-lowest dark:bg-primary shadow-sm border-b border-outline-variant dark:border-primary-container">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16 md:h-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">build_circle</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Excel Autocare</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/">Home</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary dark:border-secondary-fixed pb-1 transition-all duration-200" href="/services">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/about">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="/contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:block px-6 py-2.5 rounded-full border border-secondary text-secondary font-label-sm hover:bg-secondary-fixed transition-all active:scale-95" href="#">WhatsApp Support</a>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95">Book Service</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-50" data-alt="A hyper-modern, high-tech automotive service center with a pristine, polished gray floor and bright, clinical white lighting. The space features advanced diagnostic equipment and a premium dark blue vehicle being serviced by professional technicians in navy blue uniforms. The overall mood is sophisticated, efficient, and technologically advanced, echoing a premium Japanese engineering aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPmgiD7LEpTnzCNqMmBiSmt_jebIJHWEJC-FpKh5frk1bH_KQQe5HV9zWYGAaQNkaDI93sUv15FxByll5rcaFmkSRx3giPfCb5TRGbPJNwHBzBAOWNDch7QVjhyWRyeq5HLpr7EIwdwTtHOzrH3SVgutVukzQbEKwEv8TIG0AxRRpZwNNLr6BkSzWWlI0fpOOQVxhNjbEEVi5DOj9XY61Jepq2jkTHpOtCxqHlaY-fwihuSLsPQ5wIDU5BnrpuE6-EqnFLq_1yhcRg"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl text-white">
+<span class="text-secondary-fixed-dim font-label-sm tracking-widest uppercase mb-4 block">Maruti Suzuki Authorized Partner</span>
+<h2 class="font-display-lg text-display-lg mb-6 leading-tight">Mastery in Motion: <br/>Premium Automotive Care</h2>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-lg">Experience engineered precision with Excel Autocare. We combine Japanese technical mastery with transparent digital diagnostics.</p>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h3 class="font-display-lg text-display-lg text-primary mb-4">Comprehensive Solutions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Every service at Excel Autocare follows a rigorous 50-point inspection process, utilizing genuine parts and state-of-the-art diagnostic tools.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 bg-surface-container rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-on-surface-variant">Genuine Parts</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-label-sm text-on-surface-variant">90 Min Express</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Services -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service Card: Mechanical Works -->
+<div class="md:col-span-8 group service-card-hover bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col md:flex-row">
+<div class="md:w-1/2 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up of a high-performance car engine being meticulously tuned by a mechanic using professional digital diagnostic equipment. The lighting is focused and cinematic, highlighting the intricate mechanical details of the engine against a clean, dark workshop background. The scene exudes technical expertise, precision, and the 'engineered calm' of a premium Japanese service center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsXHADOdavmPjMc_fTu_OhkTF__365b6RsKpkbkSLU5R0b10t-KqLd89h61NOtwTjMNaNfYvN7ccpqy1U3WGUVPkozCJKOOflZTov5hJzv_4P1ibTFeAH--9zLK2oeANvgnk6NtjncRvwADLB7FrIzDnWMeOU4FJOh2Jef-10XAVjR7VUzOaz-wHdKxHIhn9jbwqDaTo7xsXFTH2Jjh3C-8L7dIRBRRpZrr8QFzFMBrcihPq76WraJeuhaYPvSKqcTIgp954C3WM-4"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">Bestseller</span>
+</div>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">engineering</span>
+<h4 class="font-headline-md text-headline-md text-primary">Mechanical Works</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Expert engine diagnostics, suspension overhaul, and transmission repairs using computerized calibration for factory-standard performance.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                  Engine Tuning &amp; Decarbonization
+                </li>
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                  Brake System Calibration
+                </li>
+<li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                  Suspension &amp; Steering Repairs
+                </li>
+</ul>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant">
+<div>
+<span class="block text-label-sm text-on-tertiary-container uppercase">Starting From</span>
+<span class="text-headline-md font-bold text-primary">₹2,499*</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm hover:bg-secondary transition-all active:scale-95">Book This Service</button>
+</div>
+</div>
+</div>
+<!-- Service Card: Body & Paint -->
+<div class="md:col-span-4 group service-card-hover bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional paint booth featuring a luxury vehicle being treated with high-end clear coat. The booth is brilliantly lit with specialized white LED panels to ensure perfect surface visibility. The scene shows ultra-clean, sterile conditions with vibrant blue and silver metallic reflections on the car's body, emphasizing the showroom-quality finish and technical mastery of the paint application process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrTZh0vjFLoQU1GO5Iixzt4tTeZqF77HMQVRqSigHWu4J4yKa-fsXqOXxLxZP8Z00U3loNj22B6s-mxMXpm98QkB57y42bzxNFMlnwTDFij5naK1HmleirrzVkJX_bTeZqeJ0V2SO97ibZa2bt7ECu_wNTUg0cJr8oOLsKFBLdZB-hu4PPoew5c7yNQRgHk6joolmLG8AC8ly_rD2ZxS-_VwKKr7M8UoI33fN__3UVC_Tz817U-iJa1ZUJlUva0D4aC1pNAsuXttf"/>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">format_paint</span>
+<h4 class="font-headline-md text-headline-md text-primary">Body &amp; Paint</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Restore your vehicle's showroom luster with our state-of-the-art paint booth and computerized color matching system.</p>
+<div class="flex flex-col gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-on-surface">Full Body Repaint</span>
+<span class="font-bold text-primary">₹14,999+</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between">
+<span class="font-body-md text-on-surface">Panel Repair</span>
+<span class="font-bold text-primary">₹1,999+</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary px-6 py-3 rounded-lg font-label-sm hover:bg-primary transition-all active:scale-95">Book This Service</button>
+</div>
+</div>
+<!-- Service Card: Scheduled Care -->
+<div class="md:col-span-6 group service-card-hover bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+<div class="h-80 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Technician performing a comprehensive scheduled maintenance check on a modern car, focusing on fluid levels and filters. The environment is a clean, organized, and professional service bay with bright daylight coming through large windows. The image highlights meticulous care and organized efficiency, with a focus on preventive maintenance and precision engineering for long-term vehicle health." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_26a8LuGFyS31P9v4lu_uBrcdxWsK4wK8kyYJGByRvajX2Od6WyPIkSkt8WtxFLh6GF_duvo4IGExOb5fBym_rOepdJoTuc-LOU_RTHEkWRwHlS5NiZq79ldqW2qqwGOeab2wkRo8WA1CVoef9dz4Yg9IL9nvB3PPWpycKm3lPR9pV8TJMD0tzJxwjJ_Cxg5E3vR4Kaw_hy67RcbPJPqyNEcCmF63rkYnQYXPx4bCqXOFXyKmuqowtprTn8MqlHBVCcwRPHcnhmm"/>
+<div class="absolute bottom-6 right-6">
+<div class="glass-card p-4 rounded-xl shadow-lg border border-white/30">
+<p class="text-primary font-bold text-headline-md">10,000 km</p>
+<p class="text-on-surface-variant text-label-sm">Recommended Interval</p>
+</div>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">calendar_today</span>
+<h4 class="font-headline-md text-headline-md text-primary">Scheduled Care</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Preventive maintenance plans tailored to your vehicle's age and mileage. We use Maruti Suzuki genuine oils and synthetic filters exclusively.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">oil_barrel</span>
+<p class="font-label-sm text-primary">Oil Change</p>
+</div>
+<div class="border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">air_purifier_gen</span>
+<p class="font-label-sm text-primary">Filter Replace</p>
+</div>
+<div class="border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">speed</span>
+<p class="font-label-sm text-primary">ECU Scan</p>
+</div>
+<div class="border border-outline-variant p-4 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2">tire_repair</span>
+<p class="font-label-sm text-primary">Wheel Align</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary px-6 py-4 rounded-lg font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95">Book This Service</button>
+</div>
+</div>
+<!-- Service Card: AC & Electrical -->
+<div class="md:col-span-6 group service-card-hover bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+<div class="h-80 relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Detailed close-up of a automotive electrical system diagnostic, showing colorful wiring and a digital multimeter. The lighting is moody with technological blue accents, highlighting the complex electronics of a modern car. Professional hands are seen delicately adjusting a component, signifying high-level technical proficiency and specialized electrical expertise in a quiet, engineered environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTUZb3eRuH9al8hRb3yhQLUWqXdCiR48G1dNquOh4fTYYaXBV1vJ-NKSU6mS8n-_ty96V4XRkT_Z3t8xznvmqWiO-gDhkZ4oluIyDsmQ5Am_W6TJkwM_--lbRe5p5CBzscUnRrgPEoqrxG_aGdmmk8Qzm4oW2zfoGGynufAomk6YsKmq0k_29EgFIYkCJI7twjtBuXWKVtZuy9uqiqUqA7pzacrOz2f5AJak1S-HIeopQcSjQv6RtA4vVPAPl1qQ_FUYZP60qEi5B"/>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">ac_unit</span>
+<h4 class="font-headline-md text-headline-md text-primary">AC &amp; Electrical</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Advanced electrical diagnostics and eco-friendly AC gas recharging. We resolve complex wiring issues and sensor faults with precision.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-secondary transition-colors cursor-default">
+<span class="text-2xl font-bold text-secondary">01</span>
+<div>
+<h5 class="font-bold text-primary">AC Gas Recharge</h5>
+<p class="text-label-sm text-on-surface-variant">Includes leak check &amp; cabin filter cleaning</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-secondary transition-colors cursor-default">
+<span class="text-2xl font-bold text-secondary">02</span>
+<div>
+<h5 class="font-bold text-primary">Electrical Scan</h5>
+<p class="text-label-sm text-on-surface-variant">Full OBD-II diagnostic &amp; error clearing</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary px-6 py-4 rounded-lg font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95">Book This Service</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparent Pricing CTA -->
+<section class="bg-primary py-24 overflow-hidden relative">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10">
+<span class="material-symbols-outlined text-[400px] leading-none select-none" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h3 class="font-display-lg text-display-lg text-white mb-6">Total Transparency. <br/>No Hidden Costs.</h3>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim">Every quotation we provide is detailed down to the last nut and bolt. We provide video updates for all major part replacements.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-lg p-10 rounded-2xl border border-white/10 max-w-md w-full">
+<div class="mb-8">
+<h5 class="text-white font-headline-md mb-2">Get an Instant Quote</h5>
+<p class="text-surface-variant font-body-md">Tell us your model and required service.</p>
+</div>
+<form class="space-y-4">
+<select class="w-full bg-white rounded-lg border-none py-3 px-4 font-body-md text-primary focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
+<option>Select Maruti Model</option>
+<option>Swift</option>
+<option>Baleno</option>
+<option>Brezza</option>
+<option>Grand Vitara</option>
+</select>
+<select class="w-full bg-white rounded-lg border-none py-3 px-4 font-body-md text-primary focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
+<option>Select Service Category</option>
+<option>Scheduled Maintenance</option>
+<option>Mechanical Repair</option>
+<option>Body Work</option>
+</select>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-4 rounded-lg hover:bg-secondary transition-all active:scale-95">Calculate Estimate</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-primary dark:bg-tertiary w-full py-12 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-desktop">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">build_circle</span>
+<span class="font-headline-md text-headline-md text-on-primary">Excel Autocare</span>
+</div>
+<p class="text-on-tertiary-container font-body-md mb-6">Redefining automotive care with Japanese precision and digital transparency.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-all" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary transition-all" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6">Quick Links</h6>
+<ul class="space-y-4 font-label-sm text-on-primary-container dark:text-on-tertiary-container">
+<li><a class="hover:text-white transition-all" href="/">Home</a></li>
+<li><a class="hover:text-white transition-all text-secondary-fixed font-bold" href="/services">Services</a></li>
+<li><a class="hover:text-white transition-all" href="/about">About Us</a></li>
+<li><a class="hover:text-white transition-all" href="/contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6">Services</h6>
+<ul class="space-y-4 font-label-sm text-on-primary-container dark:text-on-tertiary-container">
+<li><a class="hover:text-white transition-all" href="#">Mechanical Works</a></li>
+<li><a class="hover:text-white transition-all" href="#">Body &amp; Paint</a></li>
+<li><a class="hover:text-white transition-all" href="#">Scheduled Care</a></li>
+<li><a class="hover:text-white transition-all" href="#">Genuine Parts</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold mb-6">Legal &amp; Support</h6>
+<ul class="space-y-4 font-label-sm text-on-primary-container dark:text-on-tertiary-container">
+<li><a class="hover:text-white transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-all" href="#">Service Warranty</a></li>
+<li><a class="hover:text-white transition-all" href="#">Genuine Parts</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-tertiary-container">© 2024 Excel Autocare. Authorized Maruti Suzuki Service Partner.</p>
+<div class="flex items-center gap-2 text-on-tertiary-container font-label-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+        Bangalore, India
+      </div>
+</div>
+</footer>
+<script>
+    // Micro-interactions and effects
+    document.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // Simple interaction for service cards
+    const cards = document.querySelectorAll('.service-card-hover');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = "0 20px 25px -5px rgba(12, 35, 64, 0.1), 0 10px 10px -5px rgba(12, 35, 64, 0.04)";
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = "";
+      });
+    });
+  </script>
+
+<script>
+(function(){
+  // Make all links escape the iframe and navigate parent
+  document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#'||href.startsWith('javascript:')) return;
+    a.setAttribute('target','_top');
+  });
+  // Wire bottom mobile nav: assume order Home/Services/MyCars(About)/Profile(Contact)
+  const routes=['/','/services','/about','/contact'];
+  document.querySelectorAll('nav.fixed.bottom-0 a, nav.md\\:hidden.fixed a').forEach((a,i)=>{
+    if(routes[i]){ a.setAttribute('href',routes[i]); a.setAttribute('target','_top'); }
+  });
+  // Hamburger menu
+  const burger=document.querySelector('header button.md\\:hidden, nav button.md\\:hidden');
+  if(burger){
+    const menu=document.createElement('div');
+    menu.className='md:hidden fixed inset-x-0 top-16 z-40 bg-white border-b border-outline-variant shadow-lg transform -translate-y-full transition-transform duration-200';
+    menu.style.transitionProperty='transform,opacity';
+    menu.innerHTML=`
+      <div class="flex flex-col p-4 gap-1">
+        <a href="/" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Home</a>
+        <a href="/services" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Services</a>
+        <a href="/about" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">About Us</a>
+        <a href="/contact" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Contact</a>
+        <a href="#" target="_top" class="mt-2 px-4 py-3 rounded-lg bg-primary text-white text-center font-label-sm">Book Service</a>
+      </div>`;
+    document.body.appendChild(menu);
+    let open=false;
+    burger.addEventListener('click',()=>{
+      open=!open;
+      menu.style.transform=open?'translateY(0)':'translateY(-110%)';
+      const icon=burger.querySelector('.material-symbols-outlined');
+      if(icon) icon.textContent=open?'close':'menu';
+    });
+  }
+})();
+</script>
+
+</body></html>

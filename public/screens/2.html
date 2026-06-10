@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<base target="_top">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Excel Autocare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#edeeef",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-container": "#1b2334",
+                      "surface-dim": "#d9dadb",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2e3132",
+                      "on-surface": "#191c1d",
+                      "on-primary": "#ffffff",
+                      "background": "#f8f9fa",
+                      "surface-tint": "#4b5f7f",
+                      "on-secondary-fixed-variant": "#004491",
+                      "on-secondary-container": "#003370",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#dbe2fa",
+                      "outline-variant": "#c4c6ce",
+                      "on-tertiary-fixed": "#141b2c",
+                      "on-primary-container": "#778bad",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#334766",
+                      "secondary": "#115cb9",
+                      "primary-fixed": "#d5e3ff",
+                      "tertiary": "#060d1d",
+                      "surface-bright": "#f8f9fa",
+                      "surface-container-low": "#f3f4f5",
+                      "surface": "#f8f9fa",
+                      "secondary-fixed": "#d7e2ff",
+                      "on-secondary-fixed": "#001a40",
+                      "inverse-primary": "#b3c7ec",
+                      "surface-container-high": "#e7e8e9",
+                      "on-surface-variant": "#44474d",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#838a9f",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary-container": "#0c2340",
+                      "primary": "#000d21",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#acc7ff",
+                      "on-primary-fixed": "#031c38",
+                      "on-tertiary-fixed-variant": "#3f4759",
+                      "secondary-container": "#659dfe",
+                      "tertiary-fixed-dim": "#bfc6dd",
+                      "on-error-container": "#93000a",
+                      "on-background": "#191c1d",
+                      "outline": "#74777e",
+                      "primary-fixed-dim": "#b3c7ec",
+                      "surface-variant": "#e1e3e4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card-shadow {
+            shadow: 0 4px 6px -1px rgba(12, 35, 64, 0.08), 0 2px 4px -1px rgba(12, 35, 64, 0.04);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm h-16 md:h-20 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl md:text-3xl">build_circle</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Excel Autocare</span>
+</div>
+<div class="hidden md:flex items-center gap-gutter">
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="/">Home</a>
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 transition-all duration-200 font-body-md text-body-md" href="/services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="/about">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="/contact">Contact</a>
+</nav>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-sm hover:bg-secondary transition-all active:scale-95">Book Service</button>
+</div>
+</div>
+<button class="md:hidden p-2 text-primary active:scale-95">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen pb-24">
+<!-- Hero Section -->
+<section class="px-margin-mobile py-8 md:py-16 bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-4">Master-Class Service</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl">Precision Japanese engineering meets world-class maintenance. Authorized Maruti Suzuki partner dedicated to automotive excellence.</p>
+</div>
+</section>
+<!-- Services Stack -->
+<section class="px-margin-mobile -mt-8">
+<div class="max-w-container-max mx-auto flex flex-col gap-6">
+<!-- Service Card 1: Mechanical -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-tech automotive service center with a dark blue luxury SUV raised on a hydraulic lift for engine diagnostics. Professional mechanics in deep navy uniforms are working with precision tools in a sterile, bright environment with soft white overhead lighting. The scene conveys Japanese technical mastery and clean, efficient corporate aesthetics with a palette of blues and grays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGvOV_6lHf42OOeVdfJpwgqAl82ImRq6rQBU5QbjZVkOEdOofdWsiRczsrvtUSYH5pjgB3EVFGNV3B0mlDedjaTLYHPPDsPqyjhYc0MR4tCR9iQiFiZUOKfRms914f5NvMmiws9HGUj312892AOS1FajmHMQAB34_wk8IjI5py1NYNOhRoVvKRyRH3HTNRe6c-IoK9dkzztpt7LXv9jydHZw0MrGrenTZZv3eHjgOlEpas4SsOCkzsEuAaJbYLTn4nSdK_-LGBFyIf"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm">Precision Tuning</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<h2 class="font-headline-md text-headline-md text-primary">Mechanical Excellence</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Comprehensive engine diagnostics, suspension tuning, and gearbox overhauls performed by factory-certified masters.</p>
+<div class="flex flex-wrap gap-2 py-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Engine Health</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Brake Systems</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Suspension</span>
+</div>
+<button class="mt-2 w-full bg-primary text-on-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-secondary transition-all duration-200 active:scale-[0.98]">
+                            Book Mechanical Audit
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Service Card 2: Paint & Body -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-end car paint booth with soft, diffused glowing lights reflecting off a pristine deep metallic blue surface. A professional technician is applying a ceramic coating using state-of-the-art equipment in a dust-free laboratory environment. The lighting is cold and clinical, highlighting the flawless finish and high-fidelity automotive luxury of the repair facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPphUAUZUM48UPtv5dMgFYb4c57iC2a291A8gLoubW9IcNQQJ5mVGfMBLDyWXk3WKdJ5yoO3Y7OuQyzyjzyyCd2r9ZFvWrBdTfWEwLLfkRer7vpKF7ehvxqbfMd8tJ2LGN32kmOq4qRcvusDkJ7rJJT055CRLpdWNtMlRhSJn0GRdVmF3HJ4QAUsW37-uBIAsVr7-Sl8luzeGiEaFfCMD5wk3JaCW5h7TgIWjp0fY4DR0Zy2SUPpCIN7vZOtHzxCTuHgy_g2J1hYe"/>
+<div class="absolute top-4 left-4 bg-secondary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+<span class="font-label-sm text-label-sm">Paint &amp; Restoration</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<h2 class="font-headline-md text-headline-md text-primary">Aesthetic Restoration</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Factory-grade paint matching and dent restoration using computerized mixing technology for a showroom-new finish.</p>
+<div class="flex flex-wrap gap-2 py-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Oven-Baked Paint</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Ceramic Coating</span>
+</div>
+<button class="mt-2 w-full border-2 border-primary text-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all duration-200 active:scale-[0.98]">
+                            Get Bodywork Quote
+                            <span class="material-symbols-outlined">calculate</span>
+</button>
+</div>
+</div>
+<!-- Service Card 3: Maintenance -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist workspace showing a new car air filter and various genuine synthetic oil containers neatly arranged on a gray metallic surface. Bright, airy lighting from large windows creates a sense of transparency and technical precision. The corporate color palette of white, gray, and deep professional blue is evident in the organized, efficient setup of an authorized Maruti Suzuki parts center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFWAppoqYleQ_1gIS2Zo8oEfoStWsyqng8W4dPlYLaM5Sxc-FCX4Jgpg6zI53YvL3GyREodojUY0dsR6MtRo5c80aBhVVitC71F8duvXmQkuxkZkqypTIKmJTOKKCqo0LKegTQmhDJia-vlEgb86S-dtqqm2vWo9uZ5B4F3fIvBdZ0Ok3pLIwXIJEoNkbk3_rmQnB-je-d0fncIdcAxHFqCxwPXLh9Habhx5Q0M5ENqKbH9cMTthxlpDOiNTYNxSIi9INubGj1EZGR"/>
+<div class="absolute top-4 left-4 bg-tertiary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">Genuine Maintenance</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<h2 class="font-headline-md text-headline-md text-primary">Routine Care</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Scheduled preventative maintenance using 100% genuine Maruti Suzuki parts to ensure longevity and peak performance.</p>
+<div class="flex flex-wrap gap-2 py-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Full Service</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Fluid Check</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Genuine Spares</span>
+</div>
+<button class="mt-2 w-full bg-primary text-on-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-secondary transition-all duration-200 active:scale-[0.98]">
+                            Schedule Service
+                            <span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="mt-16 px-margin-mobile py-12 bg-primary text-on-primary text-center">
+<h3 class="font-headline-md text-headline-md mb-2">Authorized Quality</h3>
+<p class="opacity-80 font-body-md text-body-md mb-8">Every service is backed by our nationwide warranty and Suzuki's seal of trust.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed">workspace_premium</span>
+<p class="font-label-sm mt-2 text-white">Certified Team</p>
+</div>
+<div class="p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed">history</span>
+<p class="font-label-sm mt-2 text-white">20+ Years Exp.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-primary">Excel Autocare</span>
+<p class="text-on-primary-container font-label-sm">Engineered for your drive, serviced with precision.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-white font-bold font-body-md">Company</h4>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="/about">About Us</a>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="#">Our Network</a>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-white font-bold font-body-md">Legal</h4>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-white hover:underline transition-all font-label-sm" href="#">Service Warranty</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-white font-bold font-body-md">Support</h4>
+<div class="flex items-center gap-2 text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="font-label-sm">+91 1800-419-5555</span>
+</div>
+<div class="flex items-center gap-2 text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="font-label-sm">WhatsApp Support</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-12 pt-8 border-t border-white/10">
+<p class="text-on-primary-container font-label-sm text-center">© 2024 Excel Autocare. Authorized Maruti Suzuki Service Partner. All rights reserved.</p>
+</div>
+</footer>
+<!-- Mobile Navigation Shell (Bottom Bar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">build</span>
+<span class="text-[10px] font-label-sm">Services</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="text-[10px] font-label-sm">My Cars</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) for Booking - Only on relevant screens -->
+<button class="fixed bottom-20 right-6 w-14 h-14 bg-secondary text-white rounded-full shadow-lg flex items-center justify-center z-40 transition-transform active:scale-90 md:hidden">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+<script>
+        // Micro-interactions and scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+
+<script>
+(function(){
+  // Make all links escape the iframe and navigate parent
+  document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#'||href.startsWith('javascript:')) return;
+    a.setAttribute('target','_top');
+  });
+  // Wire bottom mobile nav: assume order Home/Services/MyCars(About)/Profile(Contact)
+  const routes=['/','/services','/about','/contact'];
+  document.querySelectorAll('nav.fixed.bottom-0 a, nav.md\\:hidden.fixed a').forEach((a,i)=>{
+    if(routes[i]){ a.setAttribute('href',routes[i]); a.setAttribute('target','_top'); }
+  });
+  // Hamburger menu
+  const burger=document.querySelector('header button.md\\:hidden, nav button.md\\:hidden');
+  if(burger){
+    const menu=document.createElement('div');
+    menu.className='md:hidden fixed inset-x-0 top-16 z-40 bg-white border-b border-outline-variant shadow-lg transform -translate-y-full transition-transform duration-200';
+    menu.style.transitionProperty='transform,opacity';
+    menu.innerHTML=`
+      <div class="flex flex-col p-4 gap-1">
+        <a href="/" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Home</a>
+        <a href="/services" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Services</a>
+        <a href="/about" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">About Us</a>
+        <a href="/contact" target="_top" class="px-4 py-3 rounded-lg hover:bg-surface-container-low text-primary font-body-md">Contact</a>
+        <a href="#" target="_top" class="mt-2 px-4 py-3 rounded-lg bg-primary text-white text-center font-label-sm">Book Service</a>
+      </div>`;
+    document.body.appendChild(menu);
+    let open=false;
+    burger.addEventListener('click',()=>{
+      open=!open;
+      menu.style.transform=open?'translateY(0)':'translateY(-110%)';
+      const icon=burger.querySelector('.material-symbols-outlined');
+      if(icon) icon.textContent=open?'close':'menu';
+    });
+  }
+})();
+</script>
+
+</body></html>
