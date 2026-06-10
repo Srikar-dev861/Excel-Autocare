@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/server",
+  "framework": "vite",
+  "functions": {
+    "dist/server/server.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
