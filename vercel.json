@@ -1,13 +1,3 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/server.js"
-    }
-  ]
+  "buildCommand": "npm run build"
 }
