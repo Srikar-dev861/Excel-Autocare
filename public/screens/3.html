@@ -62,6 +62,14 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(229, 231, 235, 0.5); }
     
+    /* Force active nav link border to show up */
+    .text-secondary {
+        color: #115cb9 !important;
+    }
+    .border-secondary {
+        border-color: #115cb9 !important;
+    }
+    
     /* Premium hover & transitions */
     .premium-btn-sweep {
         position: relative;
@@ -249,17 +257,17 @@
 </div>
 </div>
 <!-- Bento Grid Services -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
   
   <!-- Service Card 1: Car Body Works & Accident Repair -->
-  <div class="md:col-span-8 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col md:flex-row">
-    <div class="md:w-1/2 relative overflow-hidden h-64 md:h-auto">
+  <div class="md:col-span-1 lg:col-span-1 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+    <div class="h-48 md:h-52 relative overflow-hidden">
       <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Chassis alignment in progress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGvOV_6lHf42OOeVdfJpwgqAl82ImRq6rQBU5QbjZVkOEdOofdWsiRczsrvtUSYH5pjgB3EVFGNV3B0mlDedjaTLYHPPDsPqyjhYc0MR4tCR9iQiFiZUOKfRms914f5NvMmiws9HGUj312892AOS1FajmHMQAB34_wk8IjI5py1NYNOhRoVvKRyRH3HTNRe6c-IoK9dkzztpt7LXv9jydHZw0MrGrenTZZv3eHjgOlEpas4SsOCkzsEuAaJbYLTn4nSdK_-LGBFyIf"/>
       <div class="absolute top-4 left-4">
         <span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">Body Shop</span>
       </div>
     </div>
-    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+    <div class="p-8 flex-1 flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">build</span>
@@ -292,8 +300,8 @@
   </div>
 
   <!-- Service Card 2: Premium Paint Jobs -->
-  <div class="md:col-span-4 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
-    <div class="h-64 relative overflow-hidden">
+  <div class="md:col-span-1 lg:col-span-1 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+    <div class="h-48 md:h-52 relative overflow-hidden">
       <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Paint booth application" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrTZh0vjFLoQU1GO5Iixzt4tTeZqF77HMQVRqSigHWu4J4yKa-fsXqOXxLxZP8Z00U3loNj22B6s-mxMXpm98QkB57y42bzxNFMlnwTDFij5naK1HmleirrzVkJX_bTeZqeJ0V2SO97ibZa2bt7ECu_wNTUg0cJr8oOLsKFBLdZB-hu4PPoew5c7yNQRgHk6joolmLG8AC8ly_rD2ZxS-_VwKKr7M8UoI33fN__3UVC_Tz817U-iJa1ZUJlUva0D4aC1pNAsuXttf"/>
       <div class="absolute top-4 left-4">
         <span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">Oven Baked</span>
@@ -332,14 +340,14 @@
   </div>
 
   <!-- Service Card 3: Mechanical Workshop Works -->
-  <div class="md:col-span-8 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col md:flex-row">
-    <div class="md:w-1/2 relative overflow-hidden h-64 md:h-auto">
+  <div class="md:col-span-1 lg:col-span-1 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+    <div class="h-48 md:h-52 relative overflow-hidden">
       <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Mechanical calibration diagnostic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsXHADOdavmPjMc_fTu_OhkTF__365b6RsKpkbkSLU5R0b10t-KqLd89h61NOtwTjMNaNfYvN7ccpqy1U3WGUVPkozCJKOOflZTov5hJzv_4P1ibTFeAH--9zLK2oeANvgnk6NtjncRvwADLB7FrIzDnWMeOU4FJOh2Jef-10XAVjR7VUzOaz-wHdKxHIhn9jbwqDaTo7xsXFTH2Jjh3C-8L7dIRBRRpZrr8QFzFMBrcihPq76WraJeuhaYPvSKqcTIgp954C3WM-4"/>
       <div class="absolute top-4 left-4">
         <span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">High Precision</span>
       </div>
     </div>
-    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+    <div class="p-8 flex-1 flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">engineering</span>
@@ -372,8 +380,8 @@
   </div>
 
   <!-- Service Card 4: Daily Checkups & Maintenance -->
-  <div class="md:col-span-4 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
-    <div class="h-64 relative overflow-hidden">
+  <div class="md:col-span-1 lg:col-span-1 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+    <div class="h-48 md:h-52 relative overflow-hidden">
       <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Scheduled maintenance check" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_26a8LuGFyS31P9v4lu_uBrcdxWsK4wK8kyYJGByRvajX2Od6WyPIkSkt8WtxFLh6GF_duvo4IGExOb5fBym_rOepdJoTuc-LOU_RTHEkWRwHlS5NiZq79ldqW2qqwGOeab2wkRo8WA1CVoef9dz4Yg9IL9nvB3PPWpycKm3lPR9pV8TJMD0tzJxwjJ_Cxg5E3vR4Kaw_hy67RcbPJPqyNEcCmF63rkYnQYXPx4bCqXOFXyKmuqowtprTn8MqlHBVCcwRPHcnhmm"/>
       <div class="absolute top-4 left-4">
         <span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">Daily Care</span>
@@ -412,14 +420,14 @@
   </div>
 
   <!-- Service Card 5: Genuine Spare Parts Services -->
-  <div class="md:col-span-12 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col md:flex-row">
-    <div class="md:w-1/2 relative overflow-hidden h-64 md:h-auto">
+  <div class="md:col-span-1 lg:col-span-1 group service-card-hover mechanical-lift reveal-on-scroll bg-white rounded-xl overflow-hidden shadow-sm border border-outline-variant flex flex-col">
+    <div class="h-48 md:h-52 relative overflow-hidden">
       <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Maruti Suzuki Genuine Parts MGP inventory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJCjfRta5ZbLn3uAn3E4UJURPOH9xtBU1c2JreDxPQ5vEcF40TJQdzFO1dYTK7jM2aeA1gVJ9NMZYdBY7XixaKdHQZk8e2dDhvW2UJG8bE0RAxBO6IlOCmWYY82FU_v6xEJOrSc6ultI0ekENhZ6AOl3Rz7GSZ09TuI2sXYl1rt4U2F3sUKH9yJZprl4sJ42jDOjpF0MzR8UCyeVIRHZHRQolu2z63LARdXx5hWDCf2cOsN1uQTKvHtnXvReT35xiwLxBdz4OOeXqs"/>
       <div class="absolute top-4 left-4">
         <span class="bg-primary text-on-primary px-3 py-1 rounded font-label-sm">100% Genuine MGP</span>
       </div>
     </div>
-    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+    <div class="p-8 flex-1 flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg">verified_user</span>
