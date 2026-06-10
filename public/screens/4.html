@@ -72,7 +72,7 @@
                     "inverse-surface": "#2e3132",
                     "on-surface": "#191c1d",
                     "on-primary": "#ffffff",
-                    "background": "#f8f9fa",
+                    "background": "#f4f6f9",
                     "surface-tint": "#4b5f7f",
                     "on-secondary-fixed-variant": "#004491",
                     "on-secondary-container": "#003370",
@@ -83,7 +83,7 @@
                     "on-primary-container": "#778bad",
                     "error": "#ba1a1a",
                     "on-primary-fixed-variant": "#334766",
-                    "secondary": "#115cb9",
+                    "secondary": "#0066cc",
                     "primary-fixed": "#d5e3ff",
                     "tertiary": "#060d1d",
                     "surface-bright": "#f8f9fa",
@@ -97,8 +97,8 @@
                     "surface-container-lowest": "#ffffff",
                     "on-tertiary-container": "#838a9f",
                     "inverse-on-surface": "#f0f1f2",
-                    "primary-container": "#0c2340",
-                    "primary": "#000d21",
+                    "primary-container": "#081224",
+                    "primary": "#081224",
                     "on-secondary": "#ffffff",
                     "secondary-fixed-dim": "#acc7ff",
                     "on-primary-fixed": "#031c38",
@@ -152,10 +152,10 @@
         
         /* Force active nav link border to show up */
         .text-secondary {
-            color: #115cb9 !important;
+            color: #0066cc !important;
         }
         .border-secondary {
-            border-color: #115cb9 !important;
+            border-color: #0066cc !important;
         }
         .scrolled-nav {
             background-color: #ffffff !important;
@@ -199,11 +199,12 @@
         }
 
         .mechanical-lift {
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, box-shadow;
         }
         .mechanical-lift:hover {
-            transform: translateY(-8px) !important;
-            box-shadow: 0 20px 25px -5px rgba(12, 35, 64, 0.15), 0 10px 10px -5px rgba(12, 35, 64, 0.1) !important;
+            transform: translateY(-8px) scale(1.01) rotateX(1deg) rotateY(1deg) !important;
+            box-shadow: 0 25px 35px -5px rgba(8, 18, 36, 0.18), 0 15px 15px -5px rgba(8, 18, 36, 0.08) !important;
         }
 
         .reveal-on-scroll {
@@ -216,9 +217,153 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* --- CUSTOM NAV LINKS --- */
+        .nav-link {
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #44474d; /* text-on-surface-variant */
+            transition: color 0.3s ease;
+            padding-bottom: 6px;
+        }
+        .nav-link:hover {
+            color: #081224 !important; /* primary text color */
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            border-radius: 99px;
+            background-color: #0066cc; /* secondary / accent */
+            transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #0066cc !important;
+            font-weight: 700;
+        }
+
+        /* --- CUSTOM CURSOR --- */
+        #custom-cursor-dot,
+        #custom-cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999;
+            border-radius: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            display: none;
+            will-change: transform, width, height, border-color, background-color;
+        }
+        #custom-cursor-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #0066cc;
+            transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+        }
+        #custom-cursor-ring {
+            width: 26px;
+            height: 26px;
+            border: 1.5px solid #0066cc;
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, background-color 0.3s ease;
+        }
+        @media (min-width: 1024px) {
+            #custom-cursor-dot,
+            #custom-cursor-ring {
+                display: block;
+            }
+            body {
+                cursor: none;
+            }
+            a, button, select, input, textarea, [onclick], .timeline-node, .time-slot-btn, [role="button"] {
+                cursor: none;
+            }
+        }
+
+        /* Premium Header Scroll Styles */
+        header {
+            transition: padding 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.96) !important;
+            border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 10px 25px -5px rgba(8, 18, 36, 0.05);
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+        header.scrolled h1,
+        header.scrolled .font-headline-md {
+            color: #081224 !important;
+        }
+        header.scrolled .nav-link {
+            color: #44474d;
+        }
+        header.scrolled .nav-link:hover {
+            color: #081224 !important;
+        }
+        header.scrolled .nav-link.active {
+            color: #0066cc !important;
+        }
+        header.scrolled .nav-link::after {
+            background-color: #0066cc;
+        }
+        header.scrolled .border-secondary {
+            border-color: #0066cc !important;
+        }
+        header.scrolled .text-secondary {
+            color: #0066cc !important;
+        }
+        header.scrolled a.border-secondary:hover {
+            background-color: rgba(0, 102, 204, 0.05) !important;
+            color: #0066cc !important;
+        }
+        .dark header.scrolled {
+            background-color: rgba(8, 18, 36, 0.96) !important;
+            border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .dark header.scrolled h1,
+        .dark header.scrolled .font-headline-md {
+            color: #f8fafc !important;
+        }
+        .dark header.scrolled .nav-link {
+            color: #cbd5e1;
+        }
+        .dark header.scrolled .nav-link:hover {
+            color: #ffffff !important;
+        }
+        .dark header.scrolled .nav-link.active {
+            color: #acc7ff !important;
+        }
+        .dark header.scrolled .nav-link::after {
+            background-color: #acc7ff;
+        }
+        .dark header.scrolled .border-secondary {
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+        .dark header.scrolled .text-secondary {
+            color: #ffffff !important;
+        }
+        .dark header.scrolled a.border-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+        }
     </style>
+<link href="/screens/refinement.css" rel="stylesheet"/>
 </head>
 <body class="bg-background text-on-background font-body-md">
+<div id="custom-cursor-dot"></div>
+<div id="custom-cursor-ring"></div>
+<div id="scroll-progress" class="fixed top-0 left-0 h-[4px] bg-gradient-to-r from-secondary to-[#00c6ff] z-[60]" style="width: 0%; transition: width 0.08s ease-out;"></div>
 <!-- TopNavBar -->
 <header class="w-full sticky top-0 z-50 bg-surface-container-lowest dark:bg-primary shadow-sm border-b border-outline-variant dark:border-primary-container">
 <nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16 md:h-20" id="top-nav">
@@ -227,10 +372,10 @@
 <h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Excel Autocare</h1>
 </div>
 <div class="hidden md:flex items-center gap-8">
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="/">Home</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="/services">Services</a>
-<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary dark:border-secondary-fixed pb-1 transition-all duration-200" href="/about">About Us</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="/contact">Contact</a>
+<a class="nav-link" href="/">Home</a>
+<a class="nav-link" href="/services">Services</a>
+<a class="nav-link active" href="/about">About Us</a>
+<a class="nav-link" href="/contact">Contact</a>
 </div>
 <div class="flex items-center gap-4">
 <a class="hidden md:block px-6 py-2.5 rounded-full border border-secondary text-secondary font-label-sm hover:bg-secondary-fixed transition-all active:scale-95" href="#">WhatsApp Support</a>
@@ -599,6 +744,73 @@
     });
   }
 })();
-</script>
 
-</body></html>
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        const progress = document.getElementById('scroll-progress');
+        if (progress) progress.style.width = scrolled + '%';
+    });
+
+    const dot = document.getElementById('custom-cursor-dot');
+    const ring = document.getElementById('custom-cursor-ring');
+    if (dot && ring) {
+        let mouseX = -100;
+        let mouseY = -100;
+        let ringX = -100;
+        let ringY = -100;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        });
+        
+        function lerp(start, end, amt) {
+            return (1 - amt) * start + amt * end;
+        }
+        
+        function animate() {
+            ringX = lerp(ringX, mouseX, 0.15);
+            ringY = lerp(ringY, mouseY, 0.15);
+            ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        document.addEventListener('mouseover', (e) => {
+            const target = e.target.closest('a, button, select, input, textarea, [onclick], .timeline-node, .time-slot-btn, [role="button"]');
+            if (target) {
+                ring.style.width = '42px';
+                ring.style.height = '42px';
+                ring.style.borderColor = '#acc7ff';
+                ring.style.backgroundColor = 'rgba(0, 102, 204, 0.15)';
+                dot.style.width = '4px';
+                dot.style.height = '4px';
+                dot.style.backgroundColor = '#acc7ff';
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            const target = e.target.closest('a, button, select, input, textarea, [onclick], .timeline-node, .time-slot-btn, [role="button"]');
+            if (target) {
+                ring.style.width = '26px';
+                ring.style.height = '26px';
+                ring.style.borderColor = '#0066cc';
+                ring.style.backgroundColor = 'transparent';
+                dot.style.width = '6px';
+                dot.style.height = '6px';
+                dot.style.backgroundColor = '#0066cc';
+            }
+        });
+    }
+});
+</script>
+</body></html>ml>

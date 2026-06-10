@@ -11,6 +11,19 @@
  * classes (e.g. --color-primary -> bg-primary, text-primary).
  *
  * The :root and .dark blocks define the actual color values using oklch.
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
  * All colors MUST use oklch format.
  *
  * To add a new semantic color:
@@ -141,4 +154,56 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: clamp(14px, 1rem + 0.2vw, 16px);
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: var(--color-foreground);
+    line-height: 1.1;
+    margin: 0 0 var(--space-3) 0;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0 0 var(--space-4) 0;
+    color: var(--color-muted-foreground);
+  }
+
+  /* Accessible and consistent focus styles */
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-ring) 18%, transparent);
+  }
+
+  /* Buttons: ensure consistent touch target and smooth motion */
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .elev-1 { box-shadow: var(--shadow-1); }
+  .elev-2 { box-shadow: var(--shadow-2); }
+  .elev-3 { box-shadow: var(--shadow-3); }
 }

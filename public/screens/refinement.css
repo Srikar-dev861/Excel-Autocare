@@ -1,0 +1,206 @@
+:root {
+  --excel-primary: #081224;
+  --excel-primary-soft: #10233f;
+  --excel-accent: #0066cc;
+  --excel-accent-soft: #acc7ff;
+  --excel-surface: #f6f8fb;
+  --excel-border: rgba(8, 18, 36, 0.1);
+  --excel-shadow-sm: 0 6px 18px rgba(8, 18, 36, 0.06);
+  --excel-shadow-md: 0 14px 36px rgba(8, 18, 36, 0.1);
+  --excel-shadow-lg: 0 24px 60px rgba(8, 18, 36, 0.16);
+  --excel-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(0, 102, 204, 0.08), transparent 30rem),
+    linear-gradient(180deg, #f8fafc 0%, var(--excel-surface) 48%, #ffffff 100%);
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  background-color: #e7edf5;
+}
+
+:where(a, button, input, select, textarea, [role="button"], [tabindex]):focus-visible {
+  outline: 3px solid rgba(0, 102, 204, 0.36) !important;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(0, 102, 204, 0.18);
+  color: var(--excel-primary);
+}
+
+:where(h1, h2, h3, .font-display-lg, .font-display-lg-mobile, .font-headline-md) {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+:where(p, li) {
+  text-wrap: pretty;
+}
+
+:where(section) {
+  scroll-margin-top: 96px;
+}
+
+:where(.max-w-\[1280px\], .max-w-7xl, .container) {
+  width: min(100% - 2rem, 1280px);
+}
+
+header {
+  backdrop-filter: saturate(150%) blur(16px);
+  -webkit-backdrop-filter: saturate(150%) blur(16px);
+}
+
+.nav-link {
+  transition:
+    color 240ms var(--excel-ease),
+    opacity 240ms var(--excel-ease);
+}
+
+.nav-link::after {
+  height: 2px !important;
+  transition: width 320ms var(--excel-ease), opacity 320ms var(--excel-ease) !important;
+}
+
+:where(a, button, .time-slot-btn, .timeline-node, [onclick]) {
+  touch-action: manipulation;
+}
+
+:where(button, a[href], select, input, textarea, [role="button"]) {
+  transition:
+    transform 220ms var(--excel-ease),
+    box-shadow 220ms var(--excel-ease),
+    background-color 220ms var(--excel-ease),
+    border-color 220ms var(--excel-ease),
+    color 220ms var(--excel-ease),
+    opacity 220ms var(--excel-ease);
+}
+
+.premium-btn-sweep::after {
+  opacity: 0.7;
+}
+
+.mechanical-lift {
+  transform: translateZ(0);
+  transition:
+    transform 360ms var(--excel-ease),
+    box-shadow 360ms var(--excel-ease),
+    border-color 360ms var(--excel-ease) !important;
+}
+
+.mechanical-lift:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--excel-shadow-md) !important;
+}
+
+:where(.rounded-xl, .rounded-lg):where(.shadow-sm, .shadow-md, .shadow-lg, .shadow-xl),
+:where(.glass-card),
+:where([class*="border"][class*="shadow"]) {
+  border-color: var(--excel-border);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: var(--excel-shadow-sm);
+}
+
+.reveal-on-scroll {
+  transform: translateY(18px);
+  transition:
+    opacity 700ms var(--excel-ease),
+    transform 700ms var(--excel-ease) !important;
+}
+
+.material-symbols-outlined {
+  line-height: 1;
+  vertical-align: middle;
+}
+
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+:where(input, select, textarea):focus {
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.16) !important;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background:
+      radial-gradient(circle at 8% 0%, rgba(0, 102, 204, 0.075), transparent 34rem),
+      radial-gradient(circle at 92% 18%, rgba(172, 199, 255, 0.18), transparent 30rem),
+      linear-gradient(180deg, #f8fafc 0%, var(--excel-surface) 52%, #ffffff 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    min-width: 0;
+  }
+
+  :where(.px-8, .px-10, .px-12) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  :where(.py-24, .py-28, .py-32) {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  :where(.gap-8, .gap-10, .gap-12) {
+    gap: 1.25rem !important;
+  }
+
+  :where(.text-display-lg, .font-display-lg) {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  :where(.text-headline-md, .font-headline-md) {
+    line-height: 1.2 !important;
+  }
+
+  :where(button, a[href], .time-slot-btn, [role="button"]) {
+    min-height: 44px;
+  }
+
+  .mechanical-lift:hover {
+    transform: none !important;
+    box-shadow: var(--excel-shadow-sm) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
