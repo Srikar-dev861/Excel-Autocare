@@ -5,6 +5,54 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Services | Excel Autocare</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Excel Autocare",
+  "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDK8jZlO3iPoaMemKbjwwlVayxCf29nRT4-72_CdwUGOgrhp8s2BreAdWsF9zHj8IfcvipPkZAWitQR6JFU91tV-rI9wNASW3RegxxywUJzHZBRcx5kGOUhARM09pvSP89i-MBvh15Ub9rDrY4UYmI0H8n6DQIhRbIs8Hz8QvBHsa6KtsYcwJRMj8-qXkq6TBkA19ANQX9n69mtz190ZkmIh7eEqGYh682oZ9qaPPNeCa96dQ4dxW7BxvHQem51KwntJJ6FpBZIQ0FY",
+  "url": "https://excelautocare.com",
+  "telephone": "+919876543210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 42, Industrial Area Phase II, Cyber City Corridor",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "postalCode": "122008",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.4595",
+    "longitude": "77.0266"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Maruti Suzuki"
+  }
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -107,6 +155,51 @@
         body {
             -webkit-tap-highlight-color: transparent;
         }
+
+        /* Premium hover & transitions */
+        .premium-btn-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-btn-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: none;
+        }
+        .premium-btn-sweep:hover::after {
+            left: 150%;
+            transition: all 0.75s ease-in-out;
+        }
+
+        .mechanical-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .mechanical-lift:hover {
+            transform: translateY(-4px) !important; /* Slightly smaller translation on mobile */
+            box-shadow: 0 12px 20px -5px rgba(12, 35, 64, 0.12), 0 8px 8px -5px rgba(12, 35, 64, 0.08) !important;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 <style>
     body {
@@ -149,74 +242,177 @@
 <!-- Services Stack -->
 <section class="px-margin-mobile -mt-8">
 <div class="max-w-container-max mx-auto flex flex-col gap-6">
-<!-- Service Card 1: Mechanical -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A high-tech automotive service center with a dark blue luxury SUV raised on a hydraulic lift for engine diagnostics. Professional mechanics in deep navy uniforms are working with precision tools in a sterile, bright environment with soft white overhead lighting. The scene conveys Japanese technical mastery and clean, efficient corporate aesthetics with a palette of blues and grays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGvOV_6lHf42OOeVdfJpwgqAl82ImRq6rQBU5QbjZVkOEdOofdWsiRczsrvtUSYH5pjgB3EVFGNV3B0mlDedjaTLYHPPDsPqyjhYc0MR4tCR9iQiFiZUOKfRms914f5NvMmiws9HGUj312892AOS1FajmHMQAB34_wk8IjI5py1NYNOhRoVvKRyRH3HTNRe6c-IoK9dkzztpt7LXv9jydHZw0MrGrenTZZv3eHjgOlEpas4SsOCkzsEuAaJbYLTn4nSdK_-LGBFyIf"/>
-<div class="absolute top-4 left-4 bg-primary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
-<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
-<span class="font-label-sm text-label-sm">Precision Tuning</span>
-</div>
-</div>
-<div class="p-6 flex flex-col gap-3">
-<h2 class="font-headline-md text-headline-md text-primary">Mechanical Excellence</h2>
-<p class="text-on-surface-variant font-body-md text-body-md">Comprehensive engine diagnostics, suspension tuning, and gearbox overhauls performed by factory-certified masters.</p>
-<div class="flex flex-wrap gap-2 py-2">
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Engine Health</span>
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Brake Systems</span>
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Suspension</span>
-</div>
-<button class="mt-2 w-full bg-primary text-on-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-secondary transition-all duration-200 active:scale-[0.98]">
-                            Book Mechanical Audit
-                            <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- Service Card 2: Paint & Body -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Close-up of a high-end car paint booth with soft, diffused glowing lights reflecting off a pristine deep metallic blue surface. A professional technician is applying a ceramic coating using state-of-the-art equipment in a dust-free laboratory environment. The lighting is cold and clinical, highlighting the flawless finish and high-fidelity automotive luxury of the repair facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPphUAUZUM48UPtv5dMgFYb4c57iC2a291A8gLoubW9IcNQQJ5mVGfMBLDyWXk3WKdJ5yoO3Y7OuQyzyjzyyCd2r9ZFvWrBdTfWEwLLfkRer7vpKF7ehvxqbfMd8tJ2LGN32kmOq4qRcvusDkJ7rJJT055CRLpdWNtMlRhSJn0GRdVmF3HJ4QAUsW37-uBIAsVr7-Sl8luzeGiEaFfCMD5wk3JaCW5h7TgIWjp0fY4DR0Zy2SUPpCIN7vZOtHzxCTuHgy_g2J1hYe"/>
-<div class="absolute top-4 left-4 bg-secondary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
-<span class="material-symbols-outlined text-[18px]">palette</span>
-<span class="font-label-sm text-label-sm">Paint &amp; Restoration</span>
-</div>
-</div>
-<div class="p-6 flex flex-col gap-3">
-<h2 class="font-headline-md text-headline-md text-primary">Aesthetic Restoration</h2>
-<p class="text-on-surface-variant font-body-md text-body-md">Factory-grade paint matching and dent restoration using computerized mixing technology for a showroom-new finish.</p>
-<div class="flex flex-wrap gap-2 py-2">
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Oven-Baked Paint</span>
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Ceramic Coating</span>
-</div>
-<button class="mt-2 w-full border-2 border-primary text-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all duration-200 active:scale-[0.98]">
-                            Get Bodywork Quote
-                            <span class="material-symbols-outlined">calculate</span>
-</button>
-</div>
-</div>
-<!-- Service Card 3: Maintenance -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col transition-transform active:scale-[0.98]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A clean, minimalist workspace showing a new car air filter and various genuine synthetic oil containers neatly arranged on a gray metallic surface. Bright, airy lighting from large windows creates a sense of transparency and technical precision. The corporate color palette of white, gray, and deep professional blue is evident in the organized, efficient setup of an authorized Maruti Suzuki parts center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFWAppoqYleQ_1gIS2Zo8oEfoStWsyqng8W4dPlYLaM5Sxc-FCX4Jgpg6zI53YvL3GyREodojUY0dsR6MtRo5c80aBhVVitC71F8duvXmQkuxkZkqypTIKmJTOKKCqo0LKegTQmhDJia-vlEgb86S-dtqqm2vWo9uZ5B4F3fIvBdZ0Ok3pLIwXIJEoNkbk3_rmQnB-je-d0fncIdcAxHFqCxwPXLh9Habhx5Q0M5ENqKbH9cMTthxlpDOiNTYNxSIi9INubGj1EZGR"/>
-<div class="absolute top-4 left-4 bg-tertiary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
-<span class="material-symbols-outlined text-[18px]">verified</span>
-<span class="font-label-sm text-label-sm">Genuine Maintenance</span>
-</div>
-</div>
-<div class="p-6 flex flex-col gap-3">
-<h2 class="font-headline-md text-headline-md text-primary">Routine Care</h2>
-<p class="text-on-surface-variant font-body-md text-body-md">Scheduled preventative maintenance using 100% genuine Maruti Suzuki parts to ensure longevity and peak performance.</p>
-<div class="flex flex-wrap gap-2 py-2">
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Full Service</span>
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Fluid Check</span>
-<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-[12px]">Genuine Spares</span>
-</div>
-<button class="mt-2 w-full bg-primary text-on-primary py-4 rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-secondary transition-all duration-200 active:scale-[0.98]">
-                            Schedule Service
-                            <span class="material-symbols-outlined">calendar_today</span>
-</button>
-</div>
-</div>
+
+  <!-- Service Card 1: Car Body Works & Accident Repair -->
+  <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll transition-transform">
+    <div class="relative h-56 overflow-hidden">
+      <img class="w-full h-full object-cover" data-alt="Accident repair center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGvOV_6lHf42OOeVdfJpwgqAl82ImRq6rQBU5QbjZVkOEdOofdWsiRczsrvtUSYH5pjgB3EVFGNV3B0mlDedjaTLYHPPDsPqyjhYc0MR4tCR9iQiFiZUOKfRms914f5NvMmiws9HGUj312892AOS1FajmHMQAB34_wk8IjI5py1NYNOhRoVvKRyRH3HTNRe6c-IoK9dkzztpt7LXv9jydHZw0MrGrenTZZv3eHjgOlEpas4SsOCkzsEuAaJbYLTn4nSdK_-LGBFyIf"/>
+      <div class="absolute top-4 left-4 bg-primary/95 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+        <span class="material-symbols-outlined text-[18px]">build</span>
+        <span class="font-label-sm text-label-sm">Body Shop</span>
+      </div>
+    </div>
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="font-headline-md text-headline-md text-primary">Body Works &amp; Repair</h2>
+      <p class="text-on-surface-variant font-body-md text-sm">Chassis alignment, structural repair, and cashless insurance claims to restore vehicles to factory specifications.</p>
+      
+      <!-- Accordion component -->
+      <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between py-2.5 px-3 bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-primary text-xs uppercase tracking-wider transition-colors cursor-pointer mt-1">
+        <span>Included Details</span>
+        <span class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out accordion-content">
+        <ul class="pt-3 pb-1 space-y-2 text-xs text-on-surface-variant list-disc pl-4">
+          <li>Chassis frame measuring and straightening</li>
+          <li>Cold panel beating & dent removal</li>
+          <li>Bumper restoration and welding</li>
+          <li>End-to-end cashless insurance processing</li>
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-outline-variant/30 mt-2">
+        <span class="text-sm font-bold text-primary">Custom Quote</span>
+        <a href="/#booking" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-sm text-xs transition-all active:scale-[0.98] premium-btn-sweep">Book Inspection</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Card 2: Premium Paint Jobs -->
+  <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll transition-transform">
+    <div class="relative h-56 overflow-hidden">
+      <img class="w-full h-full object-cover" data-alt="Premium paint booth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrTZh0vjFLoQU1GO5Iixzt4tTeZqF77HMQVRqSigHWu4J4yKa-fsXqOXxLxZP8Z00U3loNj22B6s-mxMXpm98QkB57y42bzxNFMlnwTDFij5naK1HmleirrzVkJX_bTeZqeJ0V2SO97ibZa2bt7ECu_wNTUg0cJr8oOLsKFBLdZB-hu4PPoew5c7yNQRgHk6joolmLG8AC8ly_rD2ZxS-_VwKKr7M8UoI33fN__3UVC_Tz817U-iJa1ZUJlUva0D4aC1pNAsuXttf"/>
+      <div class="absolute top-4 left-4 bg-secondary/95 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+        <span class="material-symbols-outlined text-[18px]">format_paint</span>
+        <span class="font-label-sm text-label-sm">Paint Shop</span>
+      </div>
+    </div>
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="font-headline-md text-headline-md text-primary">Premium Paint Jobs</h2>
+      <p class="text-on-surface-variant font-body-md text-sm">Showroom-level painting using premium booths and computerised exact color-matching technology.</p>
+      
+      <!-- Accordion component -->
+      <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between py-2.5 px-3 bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-primary text-xs uppercase tracking-wider transition-colors cursor-pointer mt-1">
+        <span>Included Details</span>
+        <span class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out accordion-content">
+        <ul class="pt-3 pb-1 space-y-2 text-xs text-on-surface-variant list-disc pl-4">
+          <li>OEM computerized color coding</li>
+          <li>Dust-free painting & baking chamber</li>
+          <li>Dual-stage base and clear coats</li>
+          <li>Paint protection film (PPF) compatible finishes</li>
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-outline-variant/30 mt-2">
+        <span class="text-sm font-bold text-primary">₹1,999+</span>
+        <a href="/#booking" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-sm text-xs transition-all active:scale-[0.98] premium-btn-sweep">Book Paint</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Card 3: Mechanical Workshop Works -->
+  <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll transition-transform">
+    <div class="relative h-56 overflow-hidden">
+      <img class="w-full h-full object-cover" data-alt="Mechanical calibration diagnostic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsXHADOdavmPjMc_fTu_OhkTF__365b6RsKpkbkSLU5R0b10t-KqLd89h61NOtwTjMNaNfYvN7ccpqy1U3WGUVPkozCJKOOflZTov5hJzv_4P1ibTFeAH--9zLK2oeANvgnk6NtjncRvwADLB7FrIzDnWMeOU4FJOh2Jef-10XAVjR7VUzOaz-wHdKxHIhn9jbwqDaTo7xsXFTH2Jjh3C-8L7dIRBRRpZrr8QFzFMBrcihPq76WraJeuhaYPvSKqcTIgp954C3WM-4"/>
+      <div class="absolute top-4 left-4 bg-tertiary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+        <span class="material-symbols-outlined text-[18px]">engineering</span>
+        <span class="font-label-sm text-label-sm">Mechanical Works</span>
+      </div>
+    </div>
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="font-headline-md text-headline-md text-primary">Mechanical Workshop</h2>
+      <p class="text-on-surface-variant font-body-md text-sm">State-of-the-art engine tuning, gearbox repairs, suspension overhaul, and brake diagnostic scanner setups.</p>
+      
+      <!-- Accordion component -->
+      <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between py-2.5 px-3 bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-primary text-xs uppercase tracking-wider transition-colors cursor-pointer mt-1">
+        <span>Included Details</span>
+        <span class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out accordion-content">
+        <ul class="pt-3 pb-1 space-y-2 text-xs text-on-surface-variant list-disc pl-4">
+          <li>Electronic scanner OBD-II telemetry scans</li>
+          <li>Brake shoe repair & calibration checks</li>
+          <li>Steering column & link suspension setups</li>
+          <li>Synthetic fluid replacements & seal fits</li>
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-outline-variant/30 mt-2">
+        <span class="text-sm font-bold text-primary">₹2,499*</span>
+        <a href="/#booking" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-sm text-xs transition-all active:scale-[0.98] premium-btn-sweep">Book Works</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Card 4: Daily Checkups & Maintenance -->
+  <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll transition-transform">
+    <div class="relative h-56 overflow-hidden">
+      <img class="w-full h-full object-cover" data-alt="Scheduled maintenance check" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_26a8LuGFyS31P9v4lu_uBrcdxWsK4wK8kyYJGByRvajX2Od6WyPIkSkt8WtxFLh6GF_duvo4IGExOb5fBym_rOepdJoTuc-LOU_RTHEkWRwHlS5NiZq79ldqW2qqwGOeab2wkRo8WA1CVoef9dz4Yg9IL9nvB3PPWpycKm3lPR9pV8TJMD0tzJxwjJ_Cxg5E3vR4Kaw_hy67RcbPJPqyNEcCmF63rkYnQYXPx4bCqXOFXyKmuqowtprTn8MqlHBVCcwRPHcnhmm"/>
+      <div class="absolute top-4 left-4 bg-secondary/90 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+        <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+        <span class="font-label-sm text-label-sm">Daily Care</span>
+      </div>
+    </div>
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="font-headline-md text-headline-md text-primary">Daily &amp; Scheduled Care</h2>
+      <p class="text-on-surface-variant font-body-md text-sm">Fast oil changes, filter cleanings, and safety inspections to keep your Maruti Suzuki in top operational health.</p>
+      
+      <!-- Accordion component -->
+      <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between py-2.5 px-3 bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-primary text-xs uppercase tracking-wider transition-colors cursor-pointer mt-1">
+        <span>Included Details</span>
+        <span class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out accordion-content">
+        <ul class="pt-3 pb-1 space-y-2 text-xs text-on-surface-variant list-disc pl-4">
+          <li>Synthetic engine oil & filter replacements</li>
+          <li>Coolant, brake fluid, & washer top-ups</li>
+          <li>Wheel alignment & balance diagnostics</li>
+          <li>Battery check & terminal cleanup</li>
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-outline-variant/30 mt-2">
+        <span class="text-sm font-bold text-primary">₹999*</span>
+        <a href="/#booking" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-sm text-xs transition-all active:scale-[0.98] premium-btn-sweep">Book Care</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Card 5: Genuine Spare Parts Services -->
+  <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll transition-transform">
+    <div class="relative h-56 overflow-hidden">
+      <img class="w-full h-full object-cover" data-alt="Genuine parts storage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJCjfRta5ZbLn3uAn3E4UJURPOH9xtBU1c2JreDxPQ5vEcF40TJQdzFO1dYTK7jM2aeA1gVJ9NMZYdBY7XixaKdHQZk8e2dDhvW2UJG8bE0RAxBO6IlOCmWYY82FU_v6xEJOrSc6ultI0ekENhZ6AOl3Rz7GSZ09TuI2sXYl1rt4U2F3sUKH9yJZprl4sJ42jDOjpF0MzR8UCyeVIRHZHRQolu2z63LARdXx5hWDCf2cOsN1uQTKvHtnXvReT35xiwLxBdz4OOeXqs"/>
+      <div class="absolute top-4 left-4 bg-primary/95 text-white px-3 py-1 rounded-full flex items-center gap-2 backdrop-blur-md">
+        <span class="material-symbols-outlined text-[18px]">verified_user</span>
+        <span class="font-label-sm text-label-sm">Genuine Spares</span>
+      </div>
+    </div>
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="font-headline-md text-headline-md text-primary">Genuine Spare Parts</h2>
+      <p class="text-on-surface-variant font-body-md text-sm">Certified Maruti Suzuki Genuine Parts (MGP) inventory with manufacturer warranties and certified Suzuki oil grades.</p>
+      
+      <!-- Accordion component -->
+      <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between py-2.5 px-3 bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-primary text-xs uppercase tracking-wider transition-colors cursor-pointer mt-1">
+        <span>Included Details</span>
+        <span class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out accordion-content">
+        <ul class="pt-3 pb-1 space-y-2 text-xs text-on-surface-variant list-disc pl-4">
+          <li>Immediate fitting at certified center</li>
+          <li>Maruti Suzuki official brand warranty</li>
+          <li>OES spark plugs, filters, and drive belts</li>
+          <li>Authorized dealer parts certification</li>
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-outline-variant/30 mt-2">
+        <span class="text-sm font-bold text-primary">12 Months*</span>
+        <a href="/#booking" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label-sm text-xs transition-all active:scale-[0.98] premium-btn-sweep">Book Spares</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 </section>
 <!-- Trust Section -->
@@ -304,7 +500,47 @@
                     header.classList.remove('shadow-md');
                 }
             });
+
+            // Scroll reveals IntersectionObserver
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
         });
+
+        // Accordion Toggle
+        window.toggleAccordion = function(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                document.querySelectorAll('.accordion-content').forEach(acc => {
+                    acc.style.maxHeight = null;
+                    const prevBtn = acc.previousElementSibling;
+                    if (prevBtn) {
+                        const i = prevBtn.querySelector('.material-symbols-outlined');
+                        if (i) i.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(180deg)';
+            }
+        };
     </script>
 
 <script>

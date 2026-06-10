@@ -5,6 +5,48 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Us - Excel Autocare</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Excel Autocare",
+  "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDK8jZlO3iPoaMemKbjwwlVayxCf29nRT4-72_CdwUGOgrhp8s2BreAdWsF9zHj8IfcvipPkZAWitQR6JFU91tV-rI9wNASW3RegxxywUJzHZBRcx5kGOUhARM09pvSP89i-MBvh15Ub9rDrY4UYmI0H8n6DQIhRbIs8Hz8QvBHsa6KtsYcwJRMj8-qXkq6TBkA19ANQX9n69mtz190ZkmIh7eEqGYh682oZ9qaPPNeCa96dQ4dxW7BxvHQem51KwntJJ6FpBZIQ0FY",
+  "url": "https://excelautocare.com",
+  "telephone": "+919876543210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 45, Automotive Zone, Industrial Area Phase II",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400013",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.9818",
+    "longitude": "72.8277"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Maruti Suzuki"
+  }
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -113,6 +155,53 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
+        /* Premium Headlight sweep hover */
+        .premium-btn-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-btn-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: none;
+        }
+        .premium-btn-sweep:hover::after {
+            left: 150%;
+            transition: all 0.75s ease-in-out;
+        }
+        
+        /* Mechanical Lift Feel */
+        .mechanical-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .mechanical-lift:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 25px -5px rgba(12, 35, 64, 0.15), 0 10px 10px -5px rgba(12, 35, 64, 0.1) !important;
+        }
+        
+        /* Scroll Reveal base styles */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 <style>
     body {
@@ -140,23 +229,23 @@
 <a class="text-secondary font-bold border-b-2 border-secondary pb-1 transition-all duration-200" href="/contact">Contact</a>
 </nav>
 <div class="hidden md:flex items-center gap-4">
-<button class="px-6 py-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:opacity-90 transition-all active:scale-95">Book Service</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:opacity-90 transition-all active:scale-95 premium-btn-sweep">Book Service</button>
 </div>
 </div>
 </header>
 <main class="min-h-screen">
 <!-- Hero Section / Header -->
-<section class="pt-8 pb-12 px-margin-mobile bg-mesh-gradient">
+<section class="pt-8 pb-12 px-margin-mobile bg-mesh-gradient reveal-on-scroll">
 <div class="max-w-md mx-auto text-center">
 <h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-4">Get in Touch</h1>
 <p class="font-body-md text-body-md text-on-surface-variant">We're here to keep your Maruti Suzuki in showroom condition. Connect with our technical experts today.</p>
 </div>
 </section>
 <!-- Quick Action Grid -->
-<section class="px-margin-mobile -mt-8 mb-12">
+<section class="px-margin-mobile -mt-8 mb-12 reveal-on-scroll">
 <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
 <!-- Call Now -->
-<a class="flex items-center justify-between p-6 bg-primary text-on-primary rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group" href="tel:+919876543210">
+<a class="flex items-center justify-between p-6 bg-primary text-on-primary rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group mechanical-lift" href="tel:+919876543210">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
@@ -169,7 +258,7 @@
 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
 </a>
 <!-- WhatsApp Support -->
-<a class="flex items-center justify-between p-6 bg-[#25D366] text-white rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group" href="https://wa.me/919876543210">
+<a class="flex items-center justify-between p-6 bg-[#25D366] text-white rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group mechanical-lift" href="https://wa.me/919876543210">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
@@ -182,7 +271,7 @@
 <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
 </a>
 <!-- Get Directions -->
-<a class="flex items-center justify-between p-6 bg-secondary text-on-secondary rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group" href="https://maps.google.com">
+<a class="flex items-center justify-between p-6 bg-secondary text-on-secondary rounded-xl shadow-lg hover:scale-[1.02] transition-transform active:scale-95 group mechanical-lift" href="https://maps.google.com">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
@@ -197,7 +286,7 @@
 </div>
 </section>
 <!-- Location & Hours -->
-<section class="px-margin-mobile pb-20">
+<section class="px-margin-mobile pb-20 reveal-on-scroll">
 <div class="max-w-md mx-auto space-y-6">
 <!-- Map Placeholder -->
 <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-sm relative border border-outline-variant">
@@ -306,6 +395,26 @@
                 header.classList.remove('shadow-md');
                 header.classList.remove('bg-white');
             }
+        });
+
+        // IntersectionObserver for scroll reveals
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
         });
     </script>
 

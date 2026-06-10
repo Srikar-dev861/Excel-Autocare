@@ -5,6 +5,54 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Excel Autocare | Your Trusted Maruti Suzuki Care Experts</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Excel Autocare",
+  "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDK8jZlO3iPoaMemKbjwwlVayxCf29nRT4-72_CdwUGOgrhp8s2BreAdWsF9zHj8IfcvipPkZAWitQR6JFU91tV-rI9wNASW3RegxxywUJzHZBRcx5kGOUhARM09pvSP89i-MBvh15Ub9rDrY4UYmI0H8n6DQIhRbIs8Hz8QvBHsa6KtsYcwJRMj8-qXkq6TBkA19ANQX9n69mtz190ZkmIh7eEqGYh682oZ9qaPPNeCa96dQ4dxW7BxvHQem51KwntJJ6FpBZIQ0FY",
+  "url": "https://excelautocare.com",
+  "telephone": "+919876543210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 42, Industrial Area Phase II, Cyber City Corridor",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "postalCode": "122008",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.4595",
+    "longitude": "77.0266"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Maruti Suzuki"
+  }
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -115,6 +163,53 @@
             animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Premium Headlight sweep hover */
+        .premium-btn-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-btn-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: none;
+        }
+        .premium-btn-sweep:hover::after {
+            left: 150%;
+            transition: all 0.75s ease-in-out;
+        }
+        
+        /* Mechanical Lift Feel */
+        .mechanical-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .mechanical-lift:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 25px -5px rgba(12, 35, 64, 0.15), 0 10px 10px -5px rgba(12, 35, 64, 0.1) !important;
+        }
+        
+        /* Scroll Reveal base styles */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 <style>
     body {
@@ -138,7 +233,7 @@
 </div>
 <div class="flex items-center gap-4">
 <a class="hidden md:block px-6 py-2.5 rounded-full border border-secondary text-secondary font-label-sm hover:bg-secondary-fixed transition-all active:scale-95" href="#">WhatsApp Support</a>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95">Book Service</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95 premium-btn-sweep" onclick="const bEl = document.getElementById('booking'); if(bEl) bEl.scrollIntoView({behavior: 'smooth'});">Book Service</button>
 <button class="md:hidden p-2 text-primary active:scale-95">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -164,7 +259,7 @@
                     Experience Japanese precision and technical mastery for your vehicle. We ensure every interaction is frictionless and efficient.
                 </p>
 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-<a class="bg-secondary text-white px-8 py-4 rounded-lg font-label-sm text-center transition-all hover:bg-on-secondary-fixed-variant active:scale-95 shadow-lg shadow-secondary/20 min-w-[200px]" href="#booking">
+<a class="bg-secondary text-white px-8 py-4 rounded-lg font-label-sm text-center transition-all hover:bg-on-secondary-fixed-variant active:scale-95 shadow-lg shadow-secondary/20 min-w-[200px] premium-btn-sweep" href="#booking">
                         Book Service Now
                     </a>
 <a class="flex items-center justify-center gap-2 text-white border border-white/20 bg-white/5 backdrop-blur-md px-8 py-4 rounded-lg font-label-sm transition-all hover:bg-white/10 active:scale-95 min-w-[200px]" href="#">
@@ -182,7 +277,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <!-- Bento Card 1 -->
-<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 flex flex-col">
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll">
 <div class="h-48 md:h-64 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a high-tech car diagnostic scanner connected to a Maruti Suzuki vehicle's dashboard. The image is captured in a professional workshop setting with cool, balanced lighting. The focus is sharp on the digital screen displaying automotive metrics. The overall aesthetic is clean and professional, emphasizing technical precision and modern digital luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJYFzTubwZH7uKr_idrp2yFqDNhx-2kWSLqsfrx7wP3yN-tTaAQ2xRzGbXHx5d7JvdxElrSkO62G8rPevptC271FVrwsLNTIbNeTeUDBENviU-cKQluZt3p48o7YJQ-QHx2gdL6dWi2mPKrt4B5zOrvIc3BDYG9S34plzBVrUQXFkS2c81k2uX5xkztFqiewfcBu6Ev7xcogDH2299VJHVs-tsoKR8jt4kDzq7ahLVDO53sQ4EpAYwGUsFWFtc43gJwvZB_j-G68uB"/>
 </div>
@@ -192,7 +287,7 @@
 </div>
 </div>
 <!-- Bento Card 2 -->
-<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 flex flex-col">
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 flex flex-col mechanical-lift reveal-on-scroll">
 <div class="h-48 md:h-64 overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Detail of a brand-new brake disc and caliper being installed on a Maruti Suzuki car. The image is sharp and high-contrast, showing the metallic textures and precision engineering. The lighting is soft and professional, highlighting the quality of genuine parts. The background is a clean, organized service bay with blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxaoq1UgcbsmnS3GwqR_BIhdz9V7L-X34qvAODS0i56uiS7DcqGcv9dIgPs3reZPKRXOOvvXLatorS3NtWakz7H3Wm0BcxBaws10PIRfIRzmWjGXJGndSjJHZecW0wvy_3cGeLd3PG9crebuiQQ44Bu035ztxsyp-DpmYfN1xalRS7pZuaFrPmXexbzUWtvIFDCX_r_ITdcVg74E9eMarMlvzmHmUsCeR0_nUizh1QsfJRNzcR8DjZloQFyBceTP8HiTqLHbvq4_nF"/>
 </div>
@@ -202,14 +297,22 @@
 </div>
 </div>
 </div>
-<div class="grid grid-cols-2 gap-4">
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col items-center text-center gap-2">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col items-center text-center gap-2 mechanical-lift reveal-on-scroll">
 <span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
 <span class="font-label-sm text-primary">Genuine Parts</span>
 </div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col items-center text-center gap-2">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col items-center text-center gap-2 mechanical-lift reveal-on-scroll">
 <span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
 <span class="font-label-sm text-primary">Snappy Turnaround</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 flex flex-col items-center text-center gap-2 mechanical-lift reveal-on-scroll">
+<span class="material-symbols-outlined text-secondary text-3xl">speed</span>
+<div class="flex items-baseline gap-0.5">
+<span id="odometer" class="text-xl font-bold text-primary">0</span>
+<span class="text-xl font-bold text-primary">+</span>
+</div>
+<span class="font-label-sm text-primary text-xs font-semibold uppercase tracking-wider">Cars Serviced</span>
 </div>
 </div>
 </section>
@@ -223,43 +326,174 @@
 <h2 class="font-display-lg-mobile text-display-lg-mobile text-white">Schedule Service</h2>
 <p class="text-on-primary-container font-body-md">Engineered for your convenience. Select your preferred slot and service type.</p>
 </div>
-<form class="space-y-4 bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 shadow-2xl shadow-black/20">
-<div class="space-y-1.5">
-<label class="font-label-sm text-white/70 px-1">Vehicle Model</label>
-<select class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
-<option>Swift / Dzire</option>
-<option>Baleno / Glanza</option>
-<option>Brezza / Grand Vitara</option>
-<option>Ertiga / XL6</option>
-<option>Other Maruti Model</option>
-</select>
+<form id="booking-wizard-form" class="space-y-4 bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 shadow-2xl shadow-black/20" onsubmit="event.preventDefault();">
+<!-- Step progress bar -->
+<div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+  <div class="flex flex-col items-center gap-1 flex-1">
+    <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm">1</div>
+    <span class="text-[10px] text-white font-semibold">Vehicle</span>
+  </div>
+  <div class="h-0.5 bg-white/10 flex-1 -mt-4" id="step-line-1"></div>
+  <div class="flex flex-col items-center gap-1 flex-1">
+    <div id="step-indicator-2" class="w-8 h-8 rounded-full bg-white/10 text-white/50 flex items-center justify-center font-bold text-sm">2</div>
+    <span class="text-[10px] text-white/40">Services</span>
+  </div>
+  <div class="h-0.5 bg-white/10 flex-1 -mt-4" id="step-line-2"></div>
+  <div class="flex flex-col items-center gap-1 flex-1">
+    <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-white/10 text-white/50 flex items-center justify-center font-bold text-sm">3</div>
+    <span class="text-[10px] text-white/40">Slot</span>
+  </div>
+  <div class="h-0.5 bg-white/10 flex-1 -mt-4" id="step-line-3"></div>
+  <div class="flex flex-col items-center gap-1 flex-1">
+    <div id="step-indicator-4" class="w-8 h-8 rounded-full bg-white/10 text-white/50 flex items-center justify-center font-bold text-sm">4</div>
+    <span class="text-[10px] text-white/40">Confirm</span>
+  </div>
 </div>
-<div class="space-y-1.5">
-<label class="font-label-sm text-white/70 px-1">Service Category</label>
-<select class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
-<option>Periodic Maintenance Service</option>
-<option>Mechanical Repair</option>
-<option>Body &amp; Paint</option>
-<option>Wheel Alignment &amp; Balancing</option>
-</select>
+
+<!-- Step 1: Vehicle Model selection -->
+<div id="wizard-step-1" class="wizard-step space-y-4">
+  <div class="space-y-1.5">
+    <label class="font-label-sm text-white/70 px-1">Vehicle Model</label>
+    <select id="vehicle-model" class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
+      <option value="Swift / Dzire">Swift / Dzire</option>
+      <option value="Baleno / Glanza">Baleno / Glanza</option>
+      <option value="Brezza / Grand Vitara">Brezza / Grand Vitara</option>
+      <option value="Ertiga / XL6">Ertiga / XL6</option>
+      <option value="Other Maruti Model">Other Maruti Model</option>
+    </select>
+  </div>
+  <div class="space-y-1.5">
+    <label class="font-label-sm text-white/70 px-1">Fuel Type</label>
+    <select id="fuel-type" class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200">
+      <option value="Petrol">Petrol</option>
+      <option value="CNG">CNG</option>
+      <option value="Diesel">Diesel</option>
+      <option value="Hybrid / Electric">Smart Hybrid / Electric</option>
+    </select>
+  </div>
+  <button type="button" onclick="nextStep(2)" class="w-full bg-secondary text-white font-label-sm py-4 rounded-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 flex justify-center items-center gap-2 group premium-btn-sweep">
+    Continue to Services
+    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+  </button>
 </div>
-<div class="grid grid-cols-2 gap-4">
-<div class="space-y-1.5">
-<label class="font-label-sm text-white/70 px-1">Date</label>
-<input class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200" type="date"/>
+
+<!-- Step 2: Services checklist -->
+<div id="wizard-step-2" class="wizard-step hidden space-y-4">
+  <label class="font-label-sm text-white/70 px-1 block mb-1">Select Services Required</label>
+  <div class="space-y-2 max-h-56 overflow-y-auto pr-1">
+    <label class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-colors">
+      <input type="checkbox" name="wizard-services" value="Periodic Maintenance" class="rounded text-secondary focus:ring-secondary bg-transparent border-white/30 w-5 h-5" checked />
+      <div>
+        <p class="text-sm font-semibold text-white">Periodic Maintenance Service</p>
+        <p class="text-xs text-white/60">Recommended every 10,000 km</p>
+      </div>
+    </label>
+    <label class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-colors">
+      <input type="checkbox" name="wizard-services" value="Mechanical Repair" class="rounded text-secondary focus:ring-secondary bg-transparent border-white/30 w-5 h-5" />
+      <div>
+        <p class="text-sm font-semibold text-white">Mechanical Workshop Repair</p>
+        <p class="text-xs text-white/60">Engine, brakes, and steering tuning</p>
+      </div>
+    </label>
+    <label class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-colors">
+      <input type="checkbox" name="wizard-services" value="Body & Paint" class="rounded text-secondary focus:ring-secondary bg-transparent border-white/30 w-5 h-5" />
+      <div>
+        <p class="text-sm font-semibold text-white">Car Body Works & Paint Job</p>
+        <p class="text-xs text-white/60">Scratch removal & oven-baked paint</p>
+      </div>
+    </label>
+    <label class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-colors">
+      <input type="checkbox" name="wizard-services" value="AC & Electrical" class="rounded text-secondary focus:ring-secondary bg-transparent border-white/30 w-5 h-5" />
+      <div>
+        <p class="text-sm font-semibold text-white">AC &amp; Electrical Diagnosis</p>
+        <p class="text-xs text-white/60">OBD scan and environment-friendly gas refill</p>
+      </div>
+    </label>
+  </div>
+  <div class="flex gap-3 pt-2">
+    <button type="button" onclick="nextStep(1)" class="flex-1 bg-white/10 text-white font-label-sm py-4 rounded-lg hover:bg-white/20 transition-all active:scale-95">
+      Back
+    </button>
+    <button type="button" onclick="nextStep(3)" class="flex-1 bg-secondary text-white font-label-sm py-4 rounded-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 flex justify-center items-center gap-2 group premium-btn-sweep">
+      Select Schedule
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </button>
+  </div>
 </div>
-<div class="space-y-1.5">
-<label class="font-label-sm text-white/70 px-1">Phone</label>
-<input class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200" placeholder="+91" type="tel"/>
+
+<!-- Step 3: Calendar & timeslot -->
+<div id="wizard-step-3" class="wizard-step hidden space-y-4">
+  <label class="font-label-sm text-white/70 px-1 block">Choose Date</label>
+  <div class="grid grid-cols-4 gap-2" id="calendar-days">
+    <!-- Populated dynamically -->
+  </div>
+  
+  <label class="font-label-sm text-white/70 px-1 block pt-2">Select Time Slot</label>
+  <div class="grid grid-cols-2 gap-3">
+    <button type="button" id="slot-morning" onclick="selectSlot('Morning')" class="p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors">
+      <span class="block font-bold">Morning</span>
+      <span class="text-xs opacity-75">8 AM - 12 PM</span>
+    </button>
+    <button type="button" id="slot-afternoon" onclick="selectSlot('Afternoon')" class="p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors">
+      <span class="block font-bold">Afternoon</span>
+      <span class="text-xs opacity-75">1 PM - 5 PM</span>
+    </button>
+  </div>
+
+  <div class="flex gap-3 pt-2">
+    <button type="button" onclick="nextStep(2)" class="flex-1 bg-white/10 text-white font-label-sm py-4 rounded-lg hover:bg-white/20 transition-all active:scale-95">
+      Back
+    </button>
+    <button type="button" onclick="nextStep(4)" class="flex-1 bg-secondary text-white font-label-sm py-4 rounded-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 flex justify-center items-center gap-2 group premium-btn-sweep">
+      Enter Details
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </button>
+  </div>
 </div>
+
+<!-- Step 4: Contact details & submit -->
+<div id="wizard-step-4" class="wizard-step hidden space-y-4">
+  <div class="space-y-1.5">
+    <label class="font-label-sm text-white/70 px-1">Your Name</label>
+    <input id="customer-name" class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200" placeholder="Enter name" type="text" required/>
+  </div>
+  <div class="space-y-1.5">
+    <label class="font-label-sm text-white/70 px-1">Phone Number</label>
+    <input id="customer-phone" class="w-full bg-white text-primary border-none rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary transition-all duration-200" placeholder="Enter mobile number" type="tel" required/>
+  </div>
+
+  <div class="flex gap-3 pt-2">
+    <button type="button" onclick="nextStep(3)" class="flex-1 bg-white/10 text-white font-label-sm py-4 rounded-lg hover:bg-white/20 transition-all active:scale-95">
+      Back
+    </button>
+    <button type="button" id="confirm-booking-btn" onclick="submitBooking()" class="flex-1 bg-secondary text-white font-label-sm py-4 rounded-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 flex justify-center items-center gap-2 group premium-btn-sweep">
+      Confirm Booking
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">check_circle</span>
+    </button>
+  </div>
 </div>
-<button class="w-full bg-secondary text-white font-label-sm py-5 rounded-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 mt-4 flex justify-center items-center gap-2 group" type="submit">
-                        Confirm Appointment
-                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<p class="text-[12px] text-white/40 text-center px-4">
-                        By clicking confirm, you agree to our privacy policy and will receive a confirmation call shortly.
-                    </p>
+
+<!-- Success Screen -->
+<div id="wizard-success" class="wizard-step hidden text-center space-y-6 py-6">
+  <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto shadow-lg shadow-green-500/30 scale-up-animation">
+    <span class="material-symbols-outlined text-[36px]">check</span>
+  </div>
+  <div class="space-y-2">
+    <h3 class="text-xl font-bold text-white">Service Booked!</h3>
+    <p class="text-sm text-white/70">Your Maruti Suzuki service request has been registered.</p>
+  </div>
+  <div class="bg-white/10 p-4 rounded-xl border border-white/10 max-w-xs mx-auto">
+    <p class="text-[10px] text-white/60 uppercase tracking-wider">Booking Reference</p>
+    <p id="booking-ref" class="text-lg font-mono font-bold text-white mt-1">EX-98241</p>
+  </div>
+  <div class="space-y-1 text-xs text-white/40">
+    <p>Our service manager will call you shortly.</p>
+    <p>Helpline: +91 1800 200 400</p>
+  </div>
+  <button type="button" onclick="resetWizard()" class="mt-2 w-full bg-white/10 text-white font-label-sm py-3 rounded-lg hover:bg-white/20 transition-all">
+    Book Another Service
+  </button>
+</div>
 </form>
 </div>
 </section>
@@ -357,7 +591,184 @@
 </div>
 </div>
 <script>
-        // Micro-interactions and effects
+        let selectedDate = null;
+        let selectedSlotName = null;
+        let currentStep = 1;
+
+        // Initialize Calendar Days
+        function initCalendar() {
+            const calendarContainer = document.getElementById('calendar-days');
+            if (!calendarContainer) return;
+            calendarContainer.innerHTML = '';
+            
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            const today = new Date();
+            let count = 0;
+            let offset = 0;
+            
+            while (count < 4) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + offset);
+                offset++;
+                
+                const dayName = daysOfWeek[date.getDay()];
+                const dayNum = date.getDate();
+                const monthName = months[date.getMonth()];
+                
+                const dateString = `${dayNum} ${monthName}`;
+                const isSelected = count === 0; // Select first by default
+                if (isSelected) selectedDate = dateString;
+                
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `flex flex-col items-center justify-center p-3 rounded-lg border text-center transition-colors cursor-pointer ${
+                    isSelected 
+                        ? 'bg-secondary border-secondary text-white' 
+                        : 'bg-white/5 border-white/20 text-white/80 hover:bg-white/10'
+                }`;
+                btn.onclick = () => selectDate(btn, dateString);
+                btn.innerHTML = `
+                    <span class="text-[10px] uppercase opacity-75">${dayName}</span>
+                    <span class="text-sm font-bold block mt-0.5">${dayNum}</span>
+                    <span class="text-[10px] uppercase opacity-75">${monthName}</span>
+                `;
+                calendarContainer.appendChild(btn);
+                count++;
+            }
+        }
+
+        function selectDate(element, dateStr) {
+            selectedDate = dateStr;
+            const buttons = document.querySelectorAll('#calendar-days button');
+            buttons.forEach(btn => {
+                btn.className = 'flex flex-col items-center justify-center p-3 rounded-lg border text-center transition-colors cursor-pointer bg-white/5 border-white/20 text-white/80 hover:bg-white/10';
+            });
+            element.className = 'flex flex-col items-center justify-center p-3 rounded-lg border text-center transition-colors cursor-pointer bg-secondary border-secondary text-white';
+        }
+
+        function selectSlot(slot) {
+            selectedSlotName = slot;
+            const mBtn = document.getElementById('slot-morning');
+            const aBtn = document.getElementById('slot-afternoon');
+            if (slot === 'Morning') {
+                mBtn.className = 'p-3 rounded-lg bg-secondary border border-secondary text-white text-sm text-center transition-colors cursor-pointer';
+                aBtn.className = 'p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors cursor-pointer';
+            } else {
+                aBtn.className = 'p-3 rounded-lg bg-secondary border border-secondary text-white text-sm text-center transition-colors cursor-pointer';
+                mBtn.className = 'p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors cursor-pointer';
+            }
+        }
+
+        // Navigation Steps
+        window.nextStep = function(stepNum) {
+            if (stepNum > currentStep) {
+                // Perform simple validation
+                if (currentStep === 2) {
+                    const checked = document.querySelectorAll('input[name="wizard-services"]:checked');
+                    if (checked.length === 0) {
+                        alert('Please select at least one service category.');
+                        return;
+                    }
+                } else if (currentStep === 3) {
+                    if (!selectedDate) {
+                        alert('Please select a date.');
+                        return;
+                    }
+                    if (!selectedSlotName) {
+                        alert('Please select a time slot.');
+                        return;
+                    }
+                }
+            }
+
+            const steps = document.querySelectorAll('.wizard-step');
+            steps.forEach(s => s.classList.add('hidden'));
+            
+            const targetStep = document.getElementById(`wizard-step-${stepNum}`);
+            if (targetStep) {
+                targetStep.classList.remove('hidden');
+                currentStep = stepNum;
+                updateIndicators();
+            }
+        };
+
+        function updateIndicators() {
+            for (let i = 1; i <= 4; i++) {
+                const indicator = document.getElementById(`step-indicator-${i}`);
+                if (!indicator) continue;
+                
+                if (i < currentStep) {
+                    indicator.className = 'w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-sm';
+                    indicator.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span>';
+                } else if (i === currentStep) {
+                    indicator.className = 'w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm';
+                    indicator.innerHTML = i;
+                } else {
+                    indicator.className = 'w-8 h-8 rounded-full bg-white/10 text-white/50 flex items-center justify-center font-bold text-sm';
+                    indicator.innerHTML = i;
+                }
+
+                const line = document.getElementById(`step-line-${i}`);
+                if (line) {
+                    if (i < currentStep) {
+                        line.classList.remove('bg-white/10');
+                        line.classList.add('bg-green-500');
+                    } else {
+                        line.classList.remove('bg-green-500');
+                        line.classList.add('bg-white/10');
+                    }
+                }
+            }
+        }
+
+        // Submit Appointment
+        window.submitBooking = function() {
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+            if (!phone || phone.length < 10) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+
+            const confirmBtn = document.getElementById('confirm-booking-btn');
+            confirmBtn.disabled = true;
+            confirmBtn.innerHTML = '<div class="speedometer-loader mx-auto"></div>';
+
+            setTimeout(() => {
+                const randomRef = 'EX-' + Math.floor(10000 + Math.random() * 90000);
+                document.getElementById('booking-ref').textContent = randomRef;
+                
+                const steps = document.querySelectorAll('.wizard-step');
+                steps.forEach(s => s.classList.add('hidden'));
+                document.getElementById('wizard-success').classList.remove('hidden');
+                
+                document.querySelector('#booking-wizard-form > div.flex').classList.add('opacity-30', 'pointer-events-none');
+            }, 1500);
+        };
+
+        window.resetWizard = function() {
+            document.getElementById('booking-wizard-form').reset();
+            document.getElementById('customer-name').value = '';
+            document.getElementById('customer-phone').value = '';
+            
+            selectedSlotName = null;
+            document.getElementById('slot-morning').className = 'p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors cursor-pointer';
+            document.getElementById('slot-afternoon').className = 'p-3 rounded-lg bg-white/5 border border-white/20 text-white text-sm hover:bg-white/10 text-center transition-colors cursor-pointer';
+            
+            document.querySelector('#booking-wizard-form > div.flex').classList.remove('opacity-30', 'pointer-events-none');
+            
+            initCalendar();
+            nextStep(1);
+        };
+
+        // Scroll reveals and Odometer
         document.addEventListener('DOMContentLoaded', () => {
             const navbar = document.querySelector('nav');
             window.addEventListener('scroll', () => {
@@ -370,20 +781,65 @@
                 }
             });
 
-            // Smooth booking button animation
-            const bookingBtn = document.querySelector('button[type="submit"]');
-            if (bookingBtn) {
-                bookingBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const originalContent = bookingBtn.innerHTML;
-                    bookingBtn.innerHTML = '<div class="speedometer-loader"></div>';
-                    setTimeout(() => {
-                        bookingBtn.innerHTML = '<span class="material-symbols-outlined text-green-400">check_circle</span> Booked Successfully';
-                        setTimeout(() => { bookingBtn.innerHTML = originalContent; }, 2000);
-                    }, 1500);
+            initCalendar();
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            let odometerAnimated = false;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        
+                        if (entry.target.querySelector('#odometer') || entry.target.id === 'odometer') {
+                            if (!odometerAnimated) {
+                                odometerAnimated = true;
+                                startOdometerCounter();
+                            }
+                        }
+                        observer.unobserve(entry.target);
+                    }
                 });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            
+            const odo = document.getElementById('odometer');
+            if (odo) {
+                observer.observe(odo.closest('.reveal-on-scroll') || odo);
             }
         });
+
+        function startOdometerCounter() {
+            const odometerEl = document.getElementById('odometer');
+            if (!odometerEl) return;
+            
+            const target = 49280;
+            const duration = 2000;
+            const startTime = performance.now();
+            
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const easeProgress = progress * (2 - progress);
+                const currentCount = Math.floor(easeProgress * target);
+                
+                odometerEl.textContent = currentCount.toLocaleString('en-IN');
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    odometerEl.textContent = target.toLocaleString('en-IN');
+                }
+            };
+            
+            requestAnimationFrame(animate);
+        }
     </script>
 
 <script>

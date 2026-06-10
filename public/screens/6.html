@@ -5,6 +5,54 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact Us | Excel Autocare</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Excel Autocare",
+  "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDK8jZlO3iPoaMemKbjwwlVayxCf29nRT4-72_CdwUGOgrhp8s2BreAdWsF9zHj8IfcvipPkZAWitQR6JFU91tV-rI9wNASW3RegxxywUJzHZBRcx5kGOUhARM09pvSP89i-MBvh15Ub9rDrY4UYmI0H8n6DQIhRbIs8Hz8QvBHsa6KtsYcwJRMj8-qXkq6TBkA19ANQX9n69mtz190ZkmIh7eEqGYh682oZ9qaPPNeCa96dQ4dxW7BxvHQem51KwntJJ6FpBZIQ0FY",
+  "url": "https://excelautocare.com",
+  "telephone": "+919876543210",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot No. 42, Industrial Area Phase II, Cyber City Corridor",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "postalCode": "122008",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.4595",
+    "longitude": "77.0266"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Maruti Suzuki"
+  }
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -116,6 +164,53 @@
             background: #000d21;
             border-radius: 10px;
         }
+
+        /* Premium Headlight sweep hover */
+        .premium-btn-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-btn-sweep::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.45) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            transition: none;
+        }
+        .premium-btn-sweep:hover::after {
+            left: 150%;
+            transition: all 0.75s ease-in-out;
+        }
+        
+        /* Mechanical Lift Feel */
+        .mechanical-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .mechanical-lift:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 25px -5px rgba(12, 35, 64, 0.15), 0 10px 10px -5px rgba(12, 35, 64, 0.1) !important;
+        }
+        
+        /* Scroll Reveal base styles */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased">
@@ -134,7 +229,7 @@
 </div>
 <div class="flex items-center space-x-4">
 <a class="hidden md:block px-6 py-2.5 rounded-full border border-secondary text-secondary font-label-sm hover:bg-secondary-fixed transition-all active:scale-95" href="#">WhatsApp Support</a>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95">Book Service</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-secondary transition-all shadow-md active:scale-95 premium-btn-sweep">Book Service</button>
 <button class="md:hidden p-2 text-primary active:scale-95">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -143,7 +238,7 @@
 </header>
 <main class="max-w-container-max mx-auto px-margin-desktop py-12 md:py-20">
 <!-- Hero Section -->
-<div class="mb-16">
+<div class="mb-16 reveal-on-scroll">
 <h1 class="font-display-lg text-display-lg text-primary mb-4">Precision Support</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with Maruti Suzuki's authorized service partner for expert care, genuine parts, and transparent maintenance.</p>
 </div>
@@ -152,7 +247,7 @@
 <!-- Left Column: Details -->
 <div class="lg:col-span-5 space-y-8">
 <!-- Contact Cards -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow mechanical-lift reveal-on-scroll">
 <div class="space-y-8">
 <!-- Address -->
 <div class="flex gap-4">
@@ -212,7 +307,7 @@
 </div>
 </div>
 <!-- Form Card -->
-<div class="bg-primary text-white p-8 rounded-xl shadow-lg">
+<div class="bg-primary text-white p-8 rounded-xl shadow-lg reveal-on-scroll">
 <h3 class="font-headline-md text-headline-md mb-6">Request a Call Back</h3>
 <form class="space-y-4" onsubmit="event.preventDefault(); alert('Request sent successfully. We will call you back shortly.');">
 <div>
@@ -223,12 +318,12 @@
 <label class="block text-label-sm mb-2 opacity-80">Phone Number</label>
 <input class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/30 transition-all duration-200 placeholder:text-white/40" placeholder="Enter mobile number" type="tel"/>
 </div>
-<button class="w-full py-4 bg-secondary-container text-primary font-bold rounded-lg hover:bg-secondary-fixed transition-all duration-200 active:scale-[0.98]">Submit Request</button>
+<button class="w-full py-4 bg-secondary-container text-primary font-bold rounded-lg hover:bg-secondary-fixed transition-all duration-200 active:scale-[0.98] premium-btn-sweep">Submit Request</button>
 </form>
 </div>
 </div>
 <!-- Right Column: Interactive Map -->
-<div class="lg:col-span-7 flex flex-col h-full min-h-[600px]">
+<div class="lg:col-span-7 flex flex-col h-full min-h-[600px] reveal-on-scroll">
 <div class="relative flex-grow bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant map-glow group">
 <!-- Map Placeholder -->
 <img class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-700" data-alt="A large, detailed topographic digital map of a modern city center like Gurgaon, featuring minimalist styling with soft gray streets and deep blue accents. Highlighting a specific location marker for Excel Autocare with a subtle glowing pulse effect. The map style is clean and professional, matching a premium automotive brand aesthetic." data-location="Gurgaon, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXgZhWDWaSvjV5vUhe1xOyEMl8hQvypcMTOmOU_vRLdUm_wQBF1Hwseye8pnr3_Ea3Ood3YT6kn_VUYGatO2Em1Lh3IUJ4ncK81N_g4Sh4suWpYY59k6rfGGcoT_GQzQavpblDJL685-E7ctbBs6UsdpkLypeZRv5pQyK8snRug09u2ky7xUGjj-aH5yv5z8dilJfFWkXpv6CLSakfOEWuwv7CEOpcAOC_wUcONcvB_mNK8JwPR71jeH-TCAFHkUVi8LNDKEjDRgM"/>
@@ -324,6 +419,26 @@
             } else {
                 nav.classList.remove('shadow-md');
             }
+        });
+
+        // IntersectionObserver for scroll reveals
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
         });
     </script>
 
