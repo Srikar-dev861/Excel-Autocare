@@ -6,10 +6,25 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const isVercel = process.env.VERCEL === "1";
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+  },
+  ...(isVercel && {
+    nitro: {
+      presets: ["node-server"],
+      output: {
+        dir: ".vercel/output/functions/index.func",
+      },
+    },
+  }),
+  vite: {
+    ssr: {
+      noExternal: ["@radix-ui", "cmdk"],
+    },
   },
 });
